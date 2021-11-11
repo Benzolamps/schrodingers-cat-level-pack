@@ -6,7 +6,12 @@ local base = worldGlobals.CreateInstance(worldInfo)
 local talosProgress = nexGetTalosProgress(worldInfo)
 
 if (terminal:GetName() == "TerminalEnd") then
-  prjSaveGameProgress(worldInfo)
+  -- create temporal chapter, prevent not saving the level
+  local curr = worldInfo:GetCurrentChapter()
+  local temp = SpawnEntityByClass(worldInfo, curr:GetPlacement(), "CChapterInfoEntity")
+  temp:Start()
+  Wait(Delay(0.1))
+  curr:Start()
   terminal:EnableASCIIAnimation(true)
 end
 
