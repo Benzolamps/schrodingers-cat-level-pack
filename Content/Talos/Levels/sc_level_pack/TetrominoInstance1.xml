@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SeriousEngineFile Loader="CXMLResourceFileType">
+	<TetrominoInstances>
+		<TetrominoInstances counthint="18">
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>C</NeededMechanics>
+				<Level>level1</Level>
+				<Puzzle>001</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Break Jamming"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>FC</NeededMechanics>
+				<Level>level2</Level>
+				<Puzzle>002</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Halloween"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>FC</NeededMechanics>
+				<Level>level3</Level>
+				<Puzzle>003</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Detour"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>C</NeededMechanics>
+				<Level>level4</Level>
+				<Puzzle>004</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Domino"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>FC</NeededMechanics>
+				<Level>level5</Level>
+				<Puzzle>005</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Dependency"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>R</NeededMechanics>
+				<Level>level6</Level>
+				<Puzzle>006</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Close the Door Behind You"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>R</NeededMechanics>
+				<Level>level7</Level>
+				<Puzzle>007</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Two Colors, Two Doors"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>R</NeededMechanics>
+				<Level>level8</Level>
+				<Puzzle>008</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Traffic"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>FCR</NeededMechanics>
+				<Level>level9</Level>
+				<Puzzle>009</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Gap"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>CR</NeededMechanics>
+				<Level>level10</Level>
+				<Puzzle>010</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Suspend"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>FCR</NeededMechanics>
+				<Level>level11</Level>
+				<Puzzle>011</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Milky Way Lovers"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TFC</NeededMechanics>
+				<Level>level12</Level>
+				<Puzzle>012</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Apophi"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TC</NeededMechanics>
+				<Level>level13</Level>
+				<Puzzle>013</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Twilight"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TR</NeededMechanics>
+				<Level>level14</Level>
+				<Puzzle>014</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Draw Back"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TFCR</NeededMechanics>
+				<Level>level15</Level>
+				<Puzzle>015</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Mitosis"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TFCR</NeededMechanics>
+				<Level>level16</Level>
+				<Puzzle>016</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Teeterboard"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TCR</NeededMechanics>
+				<Level>level17</Level>
+				<Puzzle>017</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Poppy in Tears"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+            <TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TFCR</NeededMechanics>
+				<Level>level18</Level>
+				<Puzzle>018</Puzzle>
+				<PuzzleTitle>"TTRS:notrans=Portability"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+		</TetrominoInstances>
+	</TetrominoInstances>
+</SeriousEngineFile>

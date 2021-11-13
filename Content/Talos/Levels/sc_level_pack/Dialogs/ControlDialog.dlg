@@ -1,0 +1,42 @@
+﻿terminal when (Booting) {
+  text: [[TTRS:notrans=Initiating command prompt.%w1.%w1.%w1 %w9Done.
+]]
+  goto: Menu
+}
+
+terminal when (Exit) {
+  text: [[TTRS:TermDlg.CLI_Global.Ln0159.0.text.TerminatingLibrarySessionW1W1=
+Terminating session%w1.%w1.%w1.%w1.
+Session terminated.
+]]
+  exit
+}
+
+terminal when (Menu or MessageBoardInterface_Off) {
+  prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt;</span> ]]
+  options: {
+    "TTRS:notrans=Next Level" next: NextLevel
+    "TTRS:notrans=Level Record" next: LevelRecord
+    "TTRS:notrans=Level Select" next: MessageBoardInterface_On
+    "TTRS:notrans=Exit" next: Exit
+  }
+}
+
+terminal when (MessageBoardTitle) {
+  text: [[TTRS:notrans=<span class="strong">&gt;</span> Please select which level you want to play: ]]
+}
+
+terminal when (LevelSelected) {
+  text: "TTRS:notrans=%e0"
+  options: { "TTRS:notrans=Exit" next: Exit }
+}
+
+terminal when (LevelRecord) {
+  text: "TTRS:notrans=%e1"
+  options: {
+    "TTRS:notrans=Back" next: Menu
+    "TTRS:notrans=Exit" next: Exit
+  }
+}
+
+terminal when (NextLevel) { notext set: Level;+=1; goto: LevelSelected }
