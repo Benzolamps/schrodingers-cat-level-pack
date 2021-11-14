@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact name="sc_level_pack">
+    <output-path>$PROJECT_DIR$/out/artifacts/sc_level_pack</output-path>
+    <root id="root">
+      <element id="archive" name="sc_level_pack.gro">
+        <element id="directory" name="Content">
+          <element id="directory" name="Talos">
+            <element id="directory" name="Levels">
+              <element id="directory" name="sc_level_pack">
+                <element id="dir-copy" path="$PROJECT_DIR$/Content/Talos/Levels/sc_level_pack" />
+              </element>
+              <element id="file-copy" path="$PROJECT_DIR$/Content/Talos/Levels/sc_level_pack.nfo" />
+            </element>
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

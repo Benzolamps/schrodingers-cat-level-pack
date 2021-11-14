@@ -1,0 +1,14 @@
+*.gro
+/Content/Shared
+/Content/ReplaceHistory.txt
+/Content/Talos/*.dat
+/Content/Talos/Scripts
+/Content/Talos/Config
+/UserCfg.lua
+/Bin
+/BonusContent
+/EmptySteamDepot
+/Log
+/Temp
+/UserData
+/runasadmin.vdf
