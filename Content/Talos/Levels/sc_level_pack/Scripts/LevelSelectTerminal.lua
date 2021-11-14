@@ -1,16 +1,17 @@
+worldInfo:ActivateTimer(0)
+
 local util = worldGlobals.CreateUtil(worldInfo)
 
 -- talosProgress : CTalosProgress
 local talosProgress = nexGetTalosProgress(worldInfo)
 
-if (terminal:GetName() == "TerminalEnd") then
+if (terminal == util.terminal) then
   -- create temporal chapter, prevent not saving the level
   local curr = worldInfo:GetCurrentChapter()
   local temp = SpawnEntityByClass(worldInfo, curr:GetPlacement(), "CChapterInfoEntity")
   temp:Start()
   Wait(Delay(0.1))
   curr:Start()
-  worldInfo:ActivateTimer(0)
   terminal:EnableASCIIAnimation(true)
 end
 
@@ -20,7 +21,7 @@ RunHandled(
   WaitForever,
   OnEvery(Event(terminal.Started)),
   function ()
-    if terminal:GetName() == "TerminalEnd" and not finished then
+    if terminal == util.terminal and not finished then
       finished = true
       terminal:EnableASCIIAnimation(false)
 
@@ -32,9 +33,9 @@ RunHandled(
         util.currentLevel.SetLevelTime(time)
         str = str .. "You have a new record."
       end
-      str = str .. "\nTime:%w2 " .. util.currentLevel.GetLevelTime() .. " s%w3\n"
+      str = str .. "\nTime:%w2 " .. mthFloorF(time * 100) / 100 .. " s%w3\n"
       terminal:AddString(str)
-      talosProgress:SetVar("Level" .. util.currentLevel.levelIndex .. "_READ")
+      util.currentLevel.SetLevelRead(true)
     end
   end,
 
