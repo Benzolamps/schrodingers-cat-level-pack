@@ -59,7 +59,7 @@ RunHandled(
     else
       str = str .. "Level Best Time: Infinity\n"
     end
-    terminal:AddString(str .. "<span class=\"strong\">>>></span> ")
+    terminal:AddString(str .. [[<span class="strong">&gt;&gt;&gt;</span> ]])
   end,
 
   -- close the fences and barriers

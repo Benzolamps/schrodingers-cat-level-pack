@@ -13,7 +13,7 @@ Session terminated.
 }
 
 terminal when (Menu or MessageBoardInterface_Off) {
-  prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt;</span> ]]
+  prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
   options: {
     "TTRS:notrans=Next Level" next: NextLevel
     "TTRS:notrans=Level Record" next: LevelRecord
@@ -23,7 +23,7 @@ terminal when (Menu or MessageBoardInterface_Off) {
 }
 
 terminal when (MessageBoardTitle) {
-  text: [[TTRS:notrans=<span class="strong">&gt;</span> Please select which level you want to play: ]]
+  text: [[TTRS:notrans=<span class="strong">&gt; </span>Please select which level you want to play:]]
 }
 
 terminal when (LevelSelected) {

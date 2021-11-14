@@ -33,7 +33,7 @@ worldGlobals.CreateUtil = function (worldInfo)
   }
 
   local levelFile = worldInfo:GetWorldFileName()
-  for index, level in ipairs(levels) do
+  for _, level in ipairs(levels) do
     level.GetLevelTime = function ()
       return talosProgress:GetCodeValue("Level" .. level.levelIndex .. "_TIME") / 100
     end
@@ -126,8 +126,8 @@ worldGlobals.CreateUtil = function (worldInfo)
     return 0 < #worldInfo:GetAllEntitiesOfClass("CPastPlayerPuppetEntity")
   end
 
-  -- judge if the time switch recoding
-  utilMap[worldInfo].IsTimeSwitchRecoding = function ()
+  -- judge if the time switch recording
+  utilMap[worldInfo].IsTimeSwitchRecording = function ()
     if nil == worldInfo then return false end
     if not worldInfo:IsTimeSwitchActive() then return false end
     if utilMap[worldInfo].IsTimeSwitchPlaying() then return false end

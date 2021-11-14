@@ -1,4 +1,3 @@
-
 terminal when (ListThreads) { text: "TTRS:notrans=Break Jamming [C]" next: Level1 }
 terminal when (Level1) { notext set: Level;=1; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:notrans=Halloween [FC]" next: Level2 }

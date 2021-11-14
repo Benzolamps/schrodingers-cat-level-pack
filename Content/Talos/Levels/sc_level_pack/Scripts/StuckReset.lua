@@ -12,7 +12,7 @@ local function PlayerStuck(detector)
   )
 end
 
--- player stuck temporal
+-- player stuck temporarily
 local function PlayerStuckTemp(detector)
   RunHandled(
     util.WaitTerminal,

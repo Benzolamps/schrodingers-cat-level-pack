@@ -2,7 +2,7 @@
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
 		<TetrominoInstances counthint="18">
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level1</Level>
@@ -12,7 +12,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level2</Level>
@@ -22,7 +22,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level3</Level>
@@ -32,7 +32,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level4</Level>
@@ -42,7 +42,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level5</Level>
@@ -52,7 +52,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level6</Level>
@@ -62,7 +62,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level7</Level>
@@ -72,7 +72,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level8</Level>
@@ -82,7 +82,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level9</Level>
@@ -92,7 +92,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>CR</NeededMechanics>
 				<Level>level10</Level>
@@ -102,7 +102,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level11</Level>
@@ -112,7 +112,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level12</Level>
@@ -122,7 +122,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TC</NeededMechanics>
 				<Level>level13</Level>
@@ -132,7 +132,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TR</NeededMechanics>
 				<Level>level14</Level>
@@ -142,7 +142,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level15</Level>
@@ -152,7 +152,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level16</Level>
@@ -162,7 +162,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TCR</NeededMechanics>
 				<Level>level17</Level>
@@ -172,7 +172,7 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
-            <TetrominoInstanceData>
+			<TetrominoInstanceData>
 				<Name></Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level18</Level>
