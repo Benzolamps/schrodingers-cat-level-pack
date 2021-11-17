@@ -47,7 +47,7 @@
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level5</Level>
 				<Puzzle>005</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level5=Dependency"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level5=Circular Dependency"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
