@@ -1,12 +1,12 @@
 ﻿terminal when (Booting) {
-  text: [[TTRS:notrans=Initiating command prompt.%w1.%w1.%w1 %w9Done.
+  text: [[TTRS:ScLevelPack.InitCmd=Initiating command prompt.%w1.%w1.%w1 %w9Done.
 ]]
   goto: Menu
 }
 
 terminal when (Exit) {
-  text: [[TTRS:TermDlg.CLI_Global.Ln0159.0.text.TerminatingLibrarySessionW1W1=
-Terminating session%w1.%w1.%w1.%w1.
+  text: [[TTRS:ScLevelPack.TermCmd=
+Terminating session.%w1.%w1.%w1
 Session terminated.
 ]]
   exit
@@ -14,29 +14,31 @@ Session terminated.
 
 terminal when (Menu or MessageBoardInterface_Off) {
   prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
+  next: MenuOptions
+}
+
+player when (MenuOptions) {
   options: {
-    "TTRS:notrans=Next Level" next: NextLevel
-    "TTRS:notrans=Level Record" next: LevelRecord
-    "TTRS:notrans=Level Select" next: MessageBoardInterface_On
-    "TTRS:notrans=Exit" next: Exit
+    "TTRS:ScLevelPack.NextLevel=Next Level" next: NextLevel
+    "TTRS:ScLevelPack.LevelRecord=Level Record" next: LevelRecord
+    "TTRS:ScLevelPack.LevelSelect=Level Select" next: MessageBoardInterface_On
+    "TTRS:ScLevelPack.Exit=Exit" next: Exit
   }
 }
 
 terminal when (MessageBoardTitle) {
-  text: [[TTRS:notrans=<span class="strong">&gt; </span>Please select which level you want to play:]]
+  prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
+  text: "TTRS:ScLevelPack.SelectWhichLevel=Please select which level you want to play:"
 }
 
 terminal when (LevelSelected) {
-  text: "TTRS:notrans=%e0"
-  options: { "TTRS:notrans=Exit" next: Exit }
+  prompt: [[TTRS:notrans=%e0<span class="strong">&gt;&gt;&gt; </span>]]
+  next: MenuOptions
 }
 
 terminal when (LevelRecord) {
-  text: "TTRS:notrans=%e1"
-  options: {
-    "TTRS:notrans=Back" next: Menu
-    "TTRS:notrans=Exit" next: Exit
-  }
+  prompt: [[TTRS:notrans=%e1<span class="strong">&gt;&gt;&gt; </span>]]
+  next: MenuOptions
 }
 
 terminal when (NextLevel) { notext set: Level;+=1; goto: LevelSelected }

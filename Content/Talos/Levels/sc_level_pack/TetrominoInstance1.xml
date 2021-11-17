@@ -7,7 +7,7 @@
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level1</Level>
 				<Puzzle>001</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Break Jamming"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level1=Break Jamming"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -17,7 +17,7 @@
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level2</Level>
 				<Puzzle>002</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Halloween"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level2=Halloween"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -27,7 +27,7 @@
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level3</Level>
 				<Puzzle>003</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Detour"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level3=Detour"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -37,7 +37,7 @@
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level4</Level>
 				<Puzzle>004</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Domino"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level4=The Spy"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -47,7 +47,7 @@
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level5</Level>
 				<Puzzle>005</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Dependency"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level5=Dependency"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -57,7 +57,7 @@
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level6</Level>
 				<Puzzle>006</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Close the Door Behind You"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level6=Close the Door Behind You"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -67,7 +67,7 @@
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level7</Level>
 				<Puzzle>007</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Two Colors, Two Doors"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level7=Two Colors, Two Doors"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -77,7 +77,7 @@
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level8</Level>
 				<Puzzle>008</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Traffic"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level8=Traffic"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -87,7 +87,7 @@
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level9</Level>
 				<Puzzle>009</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Gap"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level9=Gap"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -97,7 +97,7 @@
 				<NeededMechanics>CR</NeededMechanics>
 				<Level>level10</Level>
 				<Puzzle>010</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Suspend"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level10=Suspend"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -107,7 +107,7 @@
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level11</Level>
 				<Puzzle>011</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Milky Way Lovers"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level11=Milky Way Lovers"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -117,7 +117,7 @@
 				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level12</Level>
 				<Puzzle>012</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Apophi"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level12=Apophi"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -127,7 +127,7 @@
 				<NeededMechanics>TC</NeededMechanics>
 				<Level>level13</Level>
 				<Puzzle>013</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Twilight"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level13=Twilight"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -137,7 +137,7 @@
 				<NeededMechanics>TR</NeededMechanics>
 				<Level>level14</Level>
 				<Puzzle>014</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Draw Back"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level14=Draw Back"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -147,7 +147,7 @@
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level15</Level>
 				<Puzzle>015</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Mitosis"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level15=Mitosis"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -157,7 +157,7 @@
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level16</Level>
 				<Puzzle>016</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Teeterboard"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level16=Teeterboard"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -167,7 +167,7 @@
 				<NeededMechanics>TCR</NeededMechanics>
 				<Level>level17</Level>
 				<Puzzle>017</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Poppy in Tears"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level17=Poppy in Tears"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -177,7 +177,7 @@
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level18</Level>
 				<Puzzle>018</Puzzle>
-				<PuzzleTitle>"TTRS:notrans=Portability"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level18=Portability"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

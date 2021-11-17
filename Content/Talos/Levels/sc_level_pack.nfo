@@ -1,4 +1,4 @@
 TALOSEPISODE
-NAME="TTRS:Episode.Name.sc_level_pack=Schrodinger's Cat Level Pack"
-FIRSTLEVEL="Content/Talos/Levels/sc_level_pack/level1.wld" 
+NAME="TTRS:ScLevelPack.EpisodeName=Schrodinger's Cat Level Pack"
+FIRSTLEVEL="Content/Talos/Levels/sc_level_pack/level1.wld"
 LANGUAGES="enu;chs;cht"

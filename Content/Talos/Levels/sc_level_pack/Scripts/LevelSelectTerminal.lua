@@ -27,13 +27,15 @@ RunHandled(
 
       -- calculate the time
       local time = worldInfo:GetTimePassedFromTimer()
-      local str = "Congratulations! "
+      local str
       -- judge if it is new record
       if util.currentLevel.GetLevelTime() <= 0 or time < util.currentLevel.GetLevelTime() then
         util.currentLevel.SetLevelTime(time)
-        str = str .. "You have a new record."
+        str = string.format(util.strings.CongratulationsNewRecord, mthFloorF(time * 100) / 100)
+      else
+        str = util.strings.Congratulations
       end
-      str = str .. "\nTime:%w2 " .. mthFloorF(time * 100) / 100 .. " s%w3\n"
+      print(str)
       terminal:AddString(str)
       util.currentLevel.SetLevelRead(true)
     end
@@ -43,7 +45,8 @@ RunHandled(
   On(CustomEvent(terminal, "TerminalEvent_0")),
   function ()
     local level = util.levels[talosProgress:GetCodeValue("Level")]
-    terminal:AddString("Opening " .. level.levelFile .. ".%w1.%w1.%w1 %w9Done.%w30.")
+    terminal:AddString(string.format(util.strings.Opening, level.levelFile))
+    print(string.format(util.strings.Opening, level.levelFile))
     Wait(Delay(2))
     worldInfo:StartLevel(level.levelFile)
   end,
@@ -51,21 +54,31 @@ RunHandled(
   -- level record
   OnEvery(CustomEvent(terminal, "TerminalEvent_1")),
   function ()
-    local str = "";
-    str = str .. util.currentLevel.levelTitle .. "\n"
-    str = str .. "Level File: " .. util.currentLevel.levelFile .. "\n"
-    if util.currentLevel.GetLevelTime() > 0 then
-      str = str .. "Level Best Time: " .. util.currentLevel.GetLevelTime() .. " s\n"
+    local str
+    if (util.currentLevel.GetLevelTime() > 0) then
+      str = string.format(
+        util.strings.LevelRecordInfo,
+        util.currentLevel.levelTitle,
+        util.currentLevel.neededMechanics,
+        util.currentLevel.levelFile,
+        util.currentLevel.GetLevelTime()
+      )
     else
-      str = str .. "Level Best Time: Infinity\n"
+      str = string.format(
+        util.strings.LevelRecordInfoNotFinish,
+        util.currentLevel.levelTitle,
+        util.currentLevel.neededMechanics,
+        util.currentLevel.levelFile
+      )
     end
-    terminal:AddString(str .. [[<span class="strong">&gt;&gt;&gt;</span> ]])
+    print(str)
+    terminal:AddString(str .. [[<span class="strong">&gt;&gt;&gt; </span>]])
   end,
 
   -- close the fences and barriers
   On(Event(terminal.Stopped)),
   function ()
-    if terminal:GetName() == "TerminalEnd" then
+    if terminal == util.terminal then
       if fences then
         fences:Open()
       end

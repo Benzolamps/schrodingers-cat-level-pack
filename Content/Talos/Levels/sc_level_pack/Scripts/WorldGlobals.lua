@@ -10,6 +10,14 @@ worldGlobals.CreateLevel = function (levelTitle, neededMechanics, levelFile, lev
   levels[levelIndex] = level
 end
 
+local strings = {
+  Congratulations = TranslateString("TTRS:ScLevelPack.Congratulations=Congratulations!\n"),
+  CongratulationsNewRecord = TranslateString("ScLevelPack.NewRecord=Congratulations! You have a new record:%%w2%%s0 %s s\n"),
+  Opening = TranslateString("TTRS:ScLevelPack.Opening=Opening %s.%%w1.%%w1.%%w1 %%w9Done.%%w30."),
+  LevelRecordInfo = TranslateString("TTRS:ScLevelPack.LevelRecordInfo=%s [%s]\nLevel File: %s\nLevel Best Time: %s s\n\n"),
+  LevelRecordInfoNotFinish = TranslateString("TTRS:ScLevelPack.LevelRecordInfoNotFinish=%s [%s]\nLevel File: %s\nLevel Best Time: Infinity\n\n")
+}
+
 local utilMap = {}
 
 -- create util object
@@ -29,7 +37,8 @@ worldGlobals.CreateUtil = function (worldInfo)
   utilMap[worldInfo] = {
     player = player,
     terminal = terminal,
-    levels = levels
+    levels = levels,
+    strings = strings
   }
 
   local levelFile = worldInfo:GetWorldFileName()
