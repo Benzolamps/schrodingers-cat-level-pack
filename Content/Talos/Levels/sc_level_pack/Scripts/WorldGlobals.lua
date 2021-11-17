@@ -12,7 +12,7 @@ end
 
 local strings = {
   Congratulations = TranslateString("TTRS:ScLevelPack.Congratulations=Congratulations!\n"),
-  CongratulationsNewRecord = TranslateString("ScLevelPack.NewRecord=Congratulations! You have a new record:%%w2%%s0 %s s\n"),
+  CongratulationsNewRecord = TranslateString("ScLevelPack.CongratulationsNewRecord=Congratulations! You have a new record:%%w2%%s0 %s s\n"),
   Opening = TranslateString("TTRS:ScLevelPack.Opening=Opening %s.%%w1.%%w1.%%w1 %%w9Done.%%w30."),
   LevelRecordInfo = TranslateString("TTRS:ScLevelPack.LevelRecordInfo=%s [%s]\nLevel File: %s\nLevel Best Time: %s s\n\n"),
   LevelRecordInfoNotFinish = TranslateString("TTRS:ScLevelPack.LevelRecordInfoNotFinish=%s [%s]\nLevel File: %s\nLevel Best Time: Infinity\n\n")

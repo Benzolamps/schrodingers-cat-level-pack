@@ -1,6 +1,6 @@
 13
 ScLevelPack.Congratulations=牛逼了，老铁！
-ScLevelPack.Congratulations=牛逼了，老铁！\n破记录了，老铁%%w2%%s0：%s秒
+ScLevelPack.CongratulationsNewRecord=牛逼了，老铁！\n破记录了，老铁%%w2%%s0：%s秒\n
 ScLevelPack.Opening=正在打开%s.%%w1.%%w1.%%w1 %%w9完成。%%w30.
 ScLevelPack.LevelRecordInfo=%s [%s]\n关卡文件：%s\n最佳用时记录：%s秒\n\n
 ScLevelPack.LevelRecordInfoNotFinish=%s [%s]\n关卡文件：%s\n最佳用时记录：Infinity\n\n
