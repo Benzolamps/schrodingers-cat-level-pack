@@ -31,11 +31,10 @@ RunHandled(
       -- judge if it is new record
       if util.currentLevel.GetLevelTime() <= 0 or time < util.currentLevel.GetLevelTime() then
         util.currentLevel.SetLevelTime(time)
-        str = string.format(util.strings.CongratulationsNewRecord, mthFloorF(time * 100) / 100)
+        str = util.FormatString(util.strings.CongratulationsNewRecord, mthFloorF(time * 100) / 100)
       else
         str = util.strings.Congratulations
       end
-      print(str)
       terminal:AddString(str)
       util.currentLevel.SetLevelRead(true)
     end
@@ -44,9 +43,18 @@ RunHandled(
   -- loading the level
   On(CustomEvent(terminal, "TerminalEvent_0")),
   function ()
-    local level = util.levels[talosProgress:GetCodeValue("Level")]
-    terminal:AddString(string.format(util.strings.Opening, level.levelFile))
-    print(string.format(util.strings.Opening, level.levelFile))
+    local levelIndex = talosProgress:GetCodeValue("Level")
+    local level
+    for key in pairs(util.levels) do
+      if (key >= levelIndex) then
+        level = util.levels[levelIndex]
+        break
+      end
+    end
+    if (nil == level) then
+      level = util.levels[1]
+    end
+    terminal:AddString(util.FormatString(util.strings.Opening, level.levelFile) .. util.strings.CommonPrompt)
     Wait(Delay(2))
     worldInfo:StartLevel(level.levelFile)
   end,
@@ -56,7 +64,7 @@ RunHandled(
   function ()
     local str
     if (util.currentLevel.GetLevelTime() > 0) then
-      str = string.format(
+      str = util.FormatString(
         util.strings.LevelRecordInfo,
         util.currentLevel.levelTitle,
         util.currentLevel.neededMechanics,
@@ -64,15 +72,14 @@ RunHandled(
         util.currentLevel.GetLevelTime()
       )
     else
-      str = string.format(
+      str = util.FormatString(
         util.strings.LevelRecordInfoNotFinish,
         util.currentLevel.levelTitle,
         util.currentLevel.neededMechanics,
         util.currentLevel.levelFile
       )
     end
-    print(str)
-    terminal:AddString(str .. [[<span class="strong">&gt;&gt;&gt; </span>]])
+    terminal:AddString(str .. util.strings.CommonPrompt)
   end,
 
   -- close the fences and barriers

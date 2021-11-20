@@ -1,4 +1,6 @@
-﻿terminal when (Booting) {
+﻿string CommonPrompt [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
+
+terminal when (Booting) {
   text: [[TTRS:ScLevelPack.InitCmd=Initiating command prompt.%w1.%w1.%w1 %w9Done.
 ]]
   goto: Menu
@@ -13,7 +15,7 @@ Session terminated.
 }
 
 terminal when (Menu or MessageBoardInterface_Off) {
-  prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
+  prompt: "%t'CommonPrompt'"
   next: MenuOptions
 }
 
@@ -27,17 +29,17 @@ player when (MenuOptions) {
 }
 
 terminal when (MessageBoardTitle) {
-  prompt: [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
+  prompt: "%t'CommonPrompt'"
   text: "TTRS:ScLevelPack.SelectWhichLevel=Please select which level you want to play:"
 }
 
 terminal when (LevelSelected) {
-  prompt: [[TTRS:notrans=%e0<span class="strong">&gt;&gt;&gt; </span>]]
+  prompt: "TTRS:notrans=%e0%t'CommonPrompt'"
   next: MenuOptions
 }
 
 terminal when (LevelRecord) {
-  prompt: [[TTRS:notrans=%e1<span class="strong">&gt;&gt;&gt; </span>]]
+  prompt: "TTRS:notrans=%e1%t'CommonPrompt'"
   next: MenuOptions
 }
 

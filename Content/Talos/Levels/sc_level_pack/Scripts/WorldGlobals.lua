@@ -11,11 +11,12 @@ worldGlobals.CreateLevel = function (levelTitle, neededMechanics, levelFile, lev
 end
 
 local strings = {
-  Congratulations = TranslateString("TTRS:ScLevelPack.Congratulations=Congratulations!\n"),
-  CongratulationsNewRecord = TranslateString("ScLevelPack.CongratulationsNewRecord=Congratulations! You have a new record:%%w2%%s0 %s s\n"),
-  Opening = TranslateString("TTRS:ScLevelPack.Opening=Opening %s.%%w1.%%w1.%%w1 %%w9Done.%%w30."),
-  LevelRecordInfo = TranslateString("TTRS:ScLevelPack.LevelRecordInfo=%s [%s]\nLevel File: %s\nLevel Best Time: %s s\n\n"),
-  LevelRecordInfoNotFinish = TranslateString("TTRS:ScLevelPack.LevelRecordInfoNotFinish=%s [%s]\nLevel File: %s\nLevel Best Time: Infinity\n\n")
+  CommonPrompt = [[<span class="strong">&gt;&gt;&gt; </span>]],
+  Congratulations = TranslateString("TTRS:ScLevelPack.Congratulations=Congratulations!\n\n"),
+  CongratulationsNewRecord = TranslateString("ScLevelPack.CongratulationsNewRecord=Congratulations! You have a new record:%w2%s0 %1 s\n\n"),
+  Opening = TranslateString("TTRS:ScLevelPack.Opening=Opening %1.%w1.%w1.%w1 %w9Done.%w30.\n\n"),
+  LevelRecordInfo = TranslateString("TTRS:ScLevelPack.LevelRecordInfo=%1 [%2]\nLevel File: %3\nLevel Best Time: %4 s\n\n"),
+  LevelRecordInfoNotFinish = TranslateString("TTRS:ScLevelPack.LevelRecordInfoNotFinish=%1 [%2]\nLevel File: %3\nLevel Best Time: Infinity\n\n")
 }
 
 local utilMap = {}
@@ -68,6 +69,16 @@ worldGlobals.CreateUtil = function (worldInfo)
      utilMap[worldInfo].currentLevel = level
      talosProgress:SetCode("Level", utilMap[worldInfo].currentLevel.levelIndex)
     end
+  end
+
+  -- wait while
+  utilMap[worldInfo].FormatString = function (str, ...)
+    for i, v in ipairs({...}) do
+      if (string.find(str, '%%' .. i)) then
+        str = string.gsub(str, '%%' .. i, tostring(v))
+      end
+    end
+    return str
   end
 
   -- wait while
