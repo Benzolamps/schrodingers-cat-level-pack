@@ -7,13 +7,16 @@ RunHandled(
   OnEvery(Delay(0.1)),
   function()
     if util.IsTimeSwitchRecording() then
-      if (lastState == 0) then
+      if (lastState ~= 1) then
         SignalEvent("TimeSwitchRecordingStarted")
         lastState = 1
       end
     elseif util.IsTimeSwitchPlaying() then
       if (lastState == 1) then
         SignalEvent("TimeSwitchRecordingEnded")
+        SignalEvent("TimeSwitchPlayingStarted")
+        lastState = 2
+      elseif (lastState == 0) then
         SignalEvent("TimeSwitchPlayingStarted")
         lastState = 2
       end
