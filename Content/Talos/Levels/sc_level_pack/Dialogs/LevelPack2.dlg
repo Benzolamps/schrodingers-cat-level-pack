@@ -1,0 +1,4 @@
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level19.WM=Code Across Time and Space [T]" next: Level19 }
+terminal when (Level19) { notext set: Level;=19; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level20.WM=Split Personality [TFC]" next: Level20 }
+terminal when (Level20) { notext set: Level;=20; goto: LevelSelected}

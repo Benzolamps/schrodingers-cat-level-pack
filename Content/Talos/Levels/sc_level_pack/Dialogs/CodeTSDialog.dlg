@@ -1,0 +1,179 @@
+string Code_TS_DoorAString "TTRS:ScLevelPack.CodeTS.DoorA=Door A"
+string Code_TS_DoorBString "TTRS:ScLevelPack.CodeTS.DoorB=Door B"
+string Code_TS_DoorCString "TTRS:ScLevelPack.CodeTS.DoorC=Door C"
+
+string Code_TS_DoorUnlockedString [[TTRS:ScLevelPack.CodeTS.DoorUnlocked= has been unlocked.
+
+]]
+
+string Code_TS_UnlockDoor "TTRS:ScLevelPack.CodeTS.UnlockDoor=Unlock "
+
+string Code_TS_DoorEnterCodeString [[TTRS:ScLevelPack.CodeTS.DoorEnterCode= is protected with a code.%w9
+Please enter the code: %w9
+
+]]
+
+
+player when (MenuOptions and Code_TS_Stage < 4) {
+  options: { "TTRS:notrans=start device_manager.exe" short: "TTRS:ScLevelPack.CodeTS.DeviceManager=[Device Manager]" next: Code_TS_List }
+}
+
+terminal when (Code_TS_List) {
+  prompt: "%t'CommonPrompt'"
+  next: Code_TS_UnlockDoorOptions
+}
+
+player when (Code_TS_UnlockDoorOptions and Code_TS_CodeRead == 1) {
+  options: { "TTRS:ScLevelPack.CodeTS.ReadCode=Read code from previous sessions" next: Code_TS_ShowCode }
+}
+
+player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 0) {
+  options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorAString'" next: Code_TS_UnlockA }
+}
+
+player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 1) {
+  options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorBString'" next: Code_TS_UnlockB }
+}
+
+player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 2) {
+  options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorCString'" next: Code_TS_UnlockC }
+}
+
+player when (Code_TS_UnlockDoorOptions) {
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Menu }
+}
+
+terminal when (Code_TS_ShowCode and Code_TS_Stage < 3) {
+  prompt: [[TTRS:notrans=▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓ %O'Code_TS_Code' ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓
+
+%t'CommonPrompt']]
+  next: Code_TS_UnlockDoorOptions
+}
+
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3) {
+  prompt: [[TTRS:notrans=▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓ %O'Code_TS_CodePrefix'█%o'Code_TS_CodeSuffix' ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓
+
+%t'CommonPrompt']]
+  next: Code_TS_UnlockDoorOptions
+}
+
+terminal when (Code_TS_UnlockA and Code_TS_Stage > 1) {
+  prompt: "%t'Code_TS_DoorAString'%t'Code_TS_DoorUnlockedString'%t'CommonPrompt'"
+  next: Code_TS_UnlockDoorOptions
+}
+
+terminal when (Code_TS_UnlockB and Code_TS_Stage > 2) {
+  prompt: "%t'Code_TS_DoorBString'%t'Code_TS_DoorUnlockedString'%t'CommonPrompt'"
+  next: Code_TS_UnlockDoorOptions
+}
+
+terminal when (Code_TS_UnlockC and Code_TS_Stage > 3) {
+  prompt: "%t'Code_TS_DoorCString'%t'Code_TS_DoorUnlockedString'%t'CommonPrompt'"
+  next: Code_TS_UnlockDoorOptions
+}
+
+terminal when (Code_TS_UnlockA and Code_TS_Stage == 1) {
+  prompt: "%t'Code_TS_DoorAString'%t'Code_TS_DoorEnterCodeString'%t'CommonPrompt'"
+  set: Code_TS_Attempts;=3;
+  goto: Code_TS_EnterCode
+}
+
+terminal when (Code_TS_UnlockB and Code_TS_Stage == 2) {
+  prompt: "%t'Code_TS_DoorBString'%t'Code_TS_DoorEnterCodeString'%t'CommonPrompt'"
+  set: Code_TS_Attempts;=3;
+  goto: Code_TS_EnterCode
+}
+
+terminal when (Code_TS_UnlockC and Code_TS_Stage == 3) {
+  prompt: "%t'Code_TS_DoorCString'%t'Code_TS_DoorEnterCodeString'%t'CommonPrompt'"
+  set: Code_TS_Attempts;=3;
+  goto: Code_TS_EnterCode
+}
+
+terminal when (Code_TS_EnterCode) {
+  enter_code: Code_TS_Code Code_TS_CodeOK Code_TS_CodeWrong
+}
+
+terminal when (Code_TS_CodeOK and not Code_TS_Recording) {
+  prompt: [[TTRS:ScLevelPack.CodeTS.CodeUnlocked=Code accepted.%w9
+Unlocking.%w3.%w3.%w3.%w3.%w3%e7
+Done.%w9
+
+%t'CommonPrompt']]
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
+}
+
+terminal when (Code_TS_CodeOK and Code_TS_Recording) {
+  prompt: [[TTRS:ScLevelPack.CodeTS.CodeUnlockFailed=Code accepted.%w9
+Unlocking.%w3.%w3.%w3.%w3.%w3%s0
+Failed.%w3 Account has been frozen!%w9
+
+%t'CommonPrompt']]
+  set: Code_TS_Attempts;=3;
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
+}
+
+terminal when (Code_TS_CodeWrong and Code_TS_Attempts > 1) {
+  set: Code_TS_Attempts;-=1;
+  prompt: [[TTRS:ScLevelPack.CodeTS.CodeAttempts=Code incorrect!%s0%w9
+Try Again (%O'Code_TS_Attempts' more tries left).%w9
+Please enter the code:%w9
+
+%t'CommonPrompt']]
+  goto: Code_TS_EnterCode
+}
+
+terminal when (Code_TS_CodeWrong and Code_TS_Attempts == 1) {
+  prompt: [[TTRS:ScLevelPack.CodeTS.CodeFailed=Code incorrect!%s0%w9
+Too many failed attempts.%w9
+Exiting session.%w9
+
+%t'CommonPrompt']]
+  options: {
+    "TTRS:notrans=qwertyuiopasdfghjklzxcvbnm" short: "TTRS:ScLevelPack.HackIt=Hack it"    next: Code_TS_GetCode
+  }
+}
+
+terminal when (Code_TS_GetCode and Code_TS_Stage == 1) {
+  prompt: [[TTRS:ScLevelPack.CodeTS.HackStage1=▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w9
+▓%w5▓%w5 %o"Code_TS_Code" ▓%w5▓%w5
+▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w9
+
+WARNING: Illegal user access detected!%w9
+Resetting code.%w3.%w3.%w3.%w3.%w3%w9%s0
+Failed.%w9%e6
+
+%t'CommonPrompt']]
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
+}
+
+terminal when (Code_TS_GetCode and Code_TS_Stage == 2) {
+  prompt: [[TTRS:ScLevelPack.CodeTS.HackStage2=▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w9
+▓%w5▓%w5 %o"Code_TS_Code" ▓%w5▓%w5
+▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w2▓%w9
+
+WARNING: Illegal user access detected!%w9
+Resetting code.%w3.%w3.%w3.%w3.%w3
+Done.%w9%e6
+
+%t'CommonPrompt']]
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
+}
+
+terminal when (Code_TS_GetCode and Code_TS_Stage == 3) {
+  prompt: [[TTRS:ScLevelPack.CodeTS.HackStage3=▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w5▓%w9
+▓%w5▓%w5 %O'Code_TS_CodePrefix'%w9%w9%s0████※※ection Lost!%w9
+
+WARNING: Illegal user access detected!%w9
+Resetting code.%w3.%w3.%w3.%w3.%w3
+Done.%w9%e6
+
+%t'CommonPrompt']]
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
+}
+
+include "Content/Talos/Levels/sc_level_pack/Dialogs/MainDialog.dlg"
