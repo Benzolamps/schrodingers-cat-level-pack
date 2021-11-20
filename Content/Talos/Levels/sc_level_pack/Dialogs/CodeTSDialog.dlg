@@ -13,9 +13,12 @@ Please enter the code: %w9
 
 ]]
 
-
 player when (MenuOptions and Code_TS_Stage < 4) {
-  options: { "TTRS:notrans=start device_manager.exe" short: "TTRS:ScLevelPack.CodeTS.DeviceManager=[Device Manager]" next: Code_TS_List }
+  options: {
+    "TTRS:notrans=start device_manager.exe"
+    short: "TTRS:ScLevelPack.CodeTS.DeviceManager=[Device Manager]"
+    next: Code_TS_List
+  }
 }
 
 terminal when (Code_TS_List) {
