@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SeriousEngineFile Loader="CXMLResourceFileType">
+	<TetrominoInstances>
+		<TetrominoInstances counthint="2">
+			<TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>T</NeededMechanics>
+				<Level>level19</Level>
+				<Puzzle>019</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level19=Code across Time and Space"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TFC</NeededMechanics>
+				<Level>level20</Level>
+				<Puzzle>020</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level20=Split Personality"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+		</TetrominoInstances>
+	</TetrominoInstances>
+</SeriousEngineFile>
