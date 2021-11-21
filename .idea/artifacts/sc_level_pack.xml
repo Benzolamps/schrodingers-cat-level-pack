@@ -2,7 +2,7 @@
   <artifact name="sc_level_pack">
     <output-path>$PROJECT_DIR$/Content/Talos</output-path>
     <root id="root">
-      <element id="archive" name="sc_level_pack_2.gro">
+      <element id="archive" name="sc_level_pack.gro">
         <element id="directory" name="Content">
           <element id="directory" name="Talos">
             <element id="directory" name="Levels">
