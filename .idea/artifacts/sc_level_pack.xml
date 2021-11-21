@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact name="sc_level_pack">
-    <output-path>$PROJECT_DIR$/Content/Talos</output-path>
+    <output-path>$PROJECT_DIR$/Content/Talos/out/sc_level_pack</output-path>
     <root id="root">
       <element id="archive" name="sc_level_pack.gro">
         <element id="directory" name="Content">
