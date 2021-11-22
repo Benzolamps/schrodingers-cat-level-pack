@@ -1,5 +1,7 @@
 local util = worldGlobals.CreateUtil(worldInfo)
 
+local itemCount = util.EntityCountInArea("CCarriableItemEntity", detector2)
+
 RunHandled(
   function()
     Wait(Event(detector3.Activated))
@@ -10,7 +12,7 @@ RunHandled(
     if not util.ExistEntityInArea("CJammerItemEntity", detector1) then
       util.ResetMessage()
     end
-    if util.EntityCountInArea("CCarriableItemEntity", detector2) > 1 then
+    if util.EntityCountInArea("CCarriableItemEntity", detector2) > itemCount then
       util.ResetMessage()
     end
   end

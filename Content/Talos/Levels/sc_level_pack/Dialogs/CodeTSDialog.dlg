@@ -113,7 +113,7 @@ terminal when (Code_TS_UnlockC and Code_TS_Stage == 3) {
 
 terminal when (Code_TS_UnlockA or Code_TS_UnlockB or Code_TS_UnlockC) {
   prompt: "%t'CommonPrompt'"
-  set: Code_TS_Attempts;=3;
+  setlocal: Code_TS_Attempts;=3;
   goto: Code_TS_EnterCode
 }
 
@@ -141,12 +141,12 @@ Failed.%w3 Account has been frozen!%w9
 
 terminal when (Code_TS_CodeOK) {
   prompt: "%t'CommonPrompt'"
-  set: Code_TS_Attempts;=3;
+  setlocal: Code_TS_Attempts;=3;
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
 }
 
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts > 1) {
-  set: Code_TS_Attempts;-=1;
+  setlocal: Code_TS_Attempts;-=1;
   text: [[TTRS:ScLevelPack.CodeTS.CodeAttempts=
 Code incorrect!%s0%w9
 Try Again (%O'Code_TS_Attempts' more tries left).%w9
