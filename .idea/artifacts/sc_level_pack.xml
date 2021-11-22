@@ -2,14 +2,16 @@
   <artifact name="sc_level_pack">
     <output-path>$PROJECT_DIR$/Content/Talos/out</output-path>
     <root id="root">
-      <element id="archive" name="sc_level_pack.gro">
+      <element id="archive" name="sc_level_pack_2.gro">
         <element id="directory" name="Content">
           <element id="directory" name="Talos">
             <element id="directory" name="Levels">
               <element id="directory" name="sc_level_pack">
                 <element id="dir-copy" path="$PROJECT_DIR$/Content/Talos/Levels/sc_level_pack" />
               </element>
-              <element id="file-copy" path="$PROJECT_DIR$/Content/Talos/Levels/sc_level_pack.nfo" />
+            </element>
+            <element id="directory" name="Locales">
+              <element id="dir-copy" path="$PROJECT_DIR$/Content/Talos/Locales" />
             </element>
             <element id="directory" name="Locales">
               <element id="dir-copy" path="$PROJECT_DIR$/Content/Talos/Locales" />
