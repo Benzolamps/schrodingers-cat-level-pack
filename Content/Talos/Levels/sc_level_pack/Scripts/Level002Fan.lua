@@ -1,5 +1,5 @@
 local util = worldGlobals.CreateUtil(worldInfo)
 
-Wait(Event(util.terminal.Stopped))
+util.WaitTerminal()
 fan:Deactivate()
 plasma:Deactivate()

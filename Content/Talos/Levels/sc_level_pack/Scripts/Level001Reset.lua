@@ -4,10 +4,9 @@ RunHandled(
   function ()
     Wait(Event(mine.Died))
   end,
-  OnEvery(Any(Event(detector1.Activated), Event(detector2.Activated))),
+  OnEvery(Any(Events(detectors.Activated))),
   function ()
-    detector1:Recharge()
-    detector2:Recharge()
+    detectors:Recharge()
     if not util.ExistEntityInArea("CJammerItemEntity", detector3) then
       util.ResetMessage()
     end

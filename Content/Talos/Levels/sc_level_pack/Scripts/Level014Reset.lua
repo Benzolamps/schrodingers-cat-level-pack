@@ -4,7 +4,7 @@ RunHandled(
   util.WaitTerminal,
   OnEvery(Delay(0.1)),
   function ()
-    if util.EntityCountInArea("CCarriableRodItemEntity", detector) <= 0 then
+    if not util.ExistEntityInArea("CCarriableRodItemEntity", detector) then
       util.ResetMessage()
     end
   end

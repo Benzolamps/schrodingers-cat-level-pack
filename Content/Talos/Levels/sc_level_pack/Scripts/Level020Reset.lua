@@ -6,9 +6,7 @@ RunHandled(
   end,
   OnEvery(Delay(0.1)),
   function()
-    if util.IsTimeSwitchPlaying() then
-      return
-    end
+    if util.IsTimeSwitchPlaying() then return end
     if not util.ExistEntityInArea("CJammerItemEntity", detector1) then
       util.ResetMessage()
     end

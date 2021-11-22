@@ -4,8 +4,8 @@ RunHandled(
   util.WaitTerminal,
   OnEvery(Delay(0.1)),
   function ()
-    local distance = mthAbsF(mine:GetPlacement():GetVect().x - pressure:GetPlacement():GetVect().x)
-    if plasma:IsOpen() and 5 > distance then
+    if not plasma:IsOpen() then return end
+    if mthAbsF(mine:GetPlacement():GetVect().x - pressure:GetPlacement():GetVect().x) < 5 then
       util.ResetMessage()
     end
   end
