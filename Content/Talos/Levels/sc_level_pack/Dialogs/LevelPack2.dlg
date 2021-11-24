@@ -2,3 +2,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level19.WM=Code across Tim
 terminal when (Level19) { notext set: Level;=19; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level20.WM=Split Personality [TFC]" next: Level20 }
 terminal when (Level20) { notext set: Level;=20; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level21.WM=Plagued by Crises [FCR]" next: Level21 }
+terminal when (Level21) { notext set: Level;=21; goto: LevelSelected}
