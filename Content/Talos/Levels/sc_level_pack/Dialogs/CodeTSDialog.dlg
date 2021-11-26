@@ -1,3 +1,4 @@
+# 字符串常量
 string Code_TS_DoorAString "TTRS:ScLevelPack.CodeTS.DoorA=Door A"
 string Code_TS_DoorBString "TTRS:ScLevelPack.CodeTS.DoorB=Door B"
 string Code_TS_DoorCString "TTRS:ScLevelPack.CodeTS.DoorC=Door C"
@@ -9,6 +10,7 @@ string Code_TS_UnlockDoor "TTRS:ScLevelPack.CodeTS.UnlockDoor=Unlock "
 string Code_TS_DoorEnterCodeString [[TTRS:ScLevelPack.CodeTS.DoorEnterCode= is protected with a code.%w9
 Please enter the code:%w9]]
 
+# 在菜单中添加选项
 player when (MenuOptions and Code_TS_Stage < 4) {
   options: {
     "TTRS:notrans=open device_manager.exe"
@@ -17,11 +19,13 @@ player when (MenuOptions and Code_TS_Stage < 4) {
   }
 }
 
+# 展示开门选项
 terminal when (Code_TS_List) {
   prompt: "%t'CommonPrompt'"
   next: Code_TS_UnlockDoorOptions
 }
 
+# 展示读取到的密码选项
 player when (Code_TS_UnlockDoorOptions and Code_TS_CodeRead == 1) {
   options: {
     "TTRS:notrans=open code.txt"
@@ -30,22 +34,27 @@ player when (Code_TS_UnlockDoorOptions and Code_TS_CodeRead == 1) {
   }
 }
 
+# 开A门选项
 player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 0) {
   options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorAString'" next: Code_TS_UnlockA }
 }
 
+# 开B门选项
 player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 1) {
   options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorBString'" next: Code_TS_UnlockB }
 }
 
+# 开C门选项
 player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 2) {
   options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorCString'" next: Code_TS_UnlockC }
 }
 
+# 退出选项
 player when (Code_TS_UnlockDoorOptions) {
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Menu }
 }
 
+# 展示读取到的密码 (A门, B门)
 terminal when (Code_TS_ShowCode and Code_TS_Stage < 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
@@ -56,6 +65,7 @@ terminal when (Code_TS_ShowCode and Code_TS_Stage < 3) {
   goto: Code_TS_List
 }
 
+# 展示读取到的密码 (C门, 隐藏第3位密码)
 terminal when (Code_TS_ShowCode and Code_TS_Stage == 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
@@ -66,6 +76,7 @@ terminal when (Code_TS_ShowCode and Code_TS_Stage == 3) {
   goto: Code_TS_List
 }
 
+# A门已被解锁
 terminal when (Code_TS_UnlockA and Code_TS_Stage > 1) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorAString'%t'Code_TS_DoorUnlockedString'
@@ -74,6 +85,7 @@ terminal when (Code_TS_UnlockA and Code_TS_Stage > 1) {
   goto: Code_TS_List
 }
 
+# B门已被解锁
 terminal when (Code_TS_UnlockB and Code_TS_Stage > 2) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorBString'%t'Code_TS_DoorUnlockedString'
@@ -82,6 +94,7 @@ terminal when (Code_TS_UnlockB and Code_TS_Stage > 2) {
   goto: Code_TS_List
 }
 
+# C门已被解锁
 terminal when (Code_TS_UnlockC and Code_TS_Stage > 3) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorCString'%t'Code_TS_DoorUnlockedString'
@@ -90,6 +103,7 @@ terminal when (Code_TS_UnlockC and Code_TS_Stage > 3) {
   goto: Code_TS_List
 }
 
+# A门输入密码
 terminal when (Code_TS_UnlockA and Code_TS_Stage == 1) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorAString'%t'Code_TS_DoorEnterCodeString'
@@ -97,6 +111,7 @@ terminal when (Code_TS_UnlockA and Code_TS_Stage == 1) {
 ]]
 }
 
+# B门输入密码
 terminal when (Code_TS_UnlockB and Code_TS_Stage == 2) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorBString'%t'Code_TS_DoorEnterCodeString'
@@ -104,6 +119,7 @@ terminal when (Code_TS_UnlockB and Code_TS_Stage == 2) {
 ]]
 }
 
+# C门输入密码
 terminal when (Code_TS_UnlockC and Code_TS_Stage == 3) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorCString'%t'Code_TS_DoorEnterCodeString'
@@ -111,16 +127,19 @@ terminal when (Code_TS_UnlockC and Code_TS_Stage == 3) {
 ]]
 }
 
+# 开始输入密码
 terminal when (Code_TS_UnlockA or Code_TS_UnlockB or Code_TS_UnlockC) {
   prompt: "%t'CommonPrompt'"
   setlocal: Code_TS_Attempts;=3;
   goto: Code_TS_EnterCode
 }
 
+# 展示密码输入区
 terminal when (Code_TS_EnterCode) {
   enter_code: Code_TS_Code Code_TS_CodeOK Code_TS_CodeWrong
 }
 
+# 时间记录仪未记录, 密码正确
 terminal when (Code_TS_CodeOK and not Code_TS_Recording) {
   text: [[TTRS:ScLevelPack.CodeTS.CodeUnlocked=
 Code accepted.%w9
@@ -130,6 +149,7 @@ Done.%w9
 ]]
 }
 
+# 时间记录仪正在记录, 密码正确
 terminal when (Code_TS_CodeOK and Code_TS_Recording) {
   text: [[TTRS:ScLevelPack.CodeTS.CodeUnlockFailed=
 Code accepted.%w9
@@ -139,12 +159,14 @@ Failed.%w3 Account has been frozen!%w9
 ]]
 }
 
+# 密码正确后展示退出选项
 terminal when (Code_TS_CodeOK) {
   prompt: "%t'CommonPrompt'"
   setlocal: Code_TS_Attempts;=3;
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
 }
 
+# 密码错误, 展示可重试次数
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts > 1) {
   setlocal: Code_TS_Attempts;-=1;
   text: [[TTRS:ScLevelPack.CodeTS.CodeAttempts=
@@ -155,11 +177,13 @@ Please enter the code:%w9
 ]]
 }
 
+# 重试输入密码
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts > 1) {
   prompt: "%t'CommonPrompt'"
   goto: Code_TS_EnterCode
 }
 
+# 密码错误, 重试次数用完
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts == 1) {
   text: [[TTRS:ScLevelPack.CodeTS.CodeFailed=
 Code incorrect!%s0%w9
@@ -169,29 +193,34 @@ Exiting session.%w9
 ]]
 }
 
+# 黑掉它
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts == 1) {
   prompt: "%t'CommonPrompt'"
   goto: Code_TS_Hack
 }
 
+# A门黑掉它选项
 terminal when (Code_TS_Hack and Code_TS_Stage == 1) {
   options: {
     "TTRS:notrans=SELECT code FROM sys_dev WHERE sn = 'A'" short: "TTRS:ScLevelPack.CodeTS.HackIt=Hack it" next: Code_TS_GetCode
   }
 }
 
+# B门黑掉它选项
 terminal when (Code_TS_Hack and Code_TS_Stage == 2) {
   options: {
     "TTRS:notrans=SELECT code FROM sys_dev WHERE sn = 'B'" short: "TTRS:ScLevelPack.CodeTS.HackIt=Hack it" next: Code_TS_GetCode
   }
 }
 
+# C门黑掉它选项
 terminal when (Code_TS_Hack and Code_TS_Stage == 3) {
   options: {
     "TTRS:notrans=SELECT code FROM sys_dev WHERE sn = 'C'" short: "TTRS:ScLevelPack.CodeTS.HackIt=Hack it" next: Code_TS_GetCode
   }
 }
 
+# 数据库查询中
 terminal when (Code_TS_GetCode) {
   text: [[TTRS:ScLevelPack.CodeTS.HackQuery=
 Querying.%w9.%w9.%w9.%w9.%w9
@@ -199,6 +228,7 @@ Done.%w9
 ]]
 }
 
+# 展示破解出的密码 (A门, B门)
 terminal when (Code_TS_GetCode and Code_TS_Stage < 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
@@ -207,17 +237,20 @@ terminal when (Code_TS_GetCode and Code_TS_Stage < 3) {
 ]]
 }
 
+# 展示破解出的密码 (C门, 只展示前两位)
 terminal when (Code_TS_GetCode and Code_TS_Stage == 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
 ▓▓ %O'Code_TS_CodePrefix'%w9%w9%s0████ ]]
 }
 
+# C门, 连接断开
 terminal when (Code_TS_GetCode and Code_TS_Stage == 3) {
   text: [[TTRS:ScLevelPack.CodeTS.ConnectionLost=※※ection lost!%w9
 ]]
 }
 
+# 密码重置 (A门, 重置失败)
 terminal when (Code_TS_GetCode and Code_TS_Stage == 1) {
   text: [[TTRS:ScLevelPack.CodeTS.ResetFailed=
 WARNING: Illegal user access detected!%w9
@@ -227,6 +260,7 @@ Failed.%w9%e6
 ]]
 }
 
+# 密码重置 (B门, C门, 重置成功)
 terminal when (Code_TS_GetCode and Code_TS_Stage > 1) {
   text: [[TTRS:ScLevelPack.CodeTS.ResetFinish=
 WARNING: Illegal user access detected!%w9
@@ -236,9 +270,11 @@ Done.%w9%e6
 ]]
 }
 
+# 密码重置后展示退出选项
 terminal when (Code_TS_GetCode) {
   prompt: "%t'CommonPrompt'"
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
 }
 
+# 加载主对话文件
 include "Content/Talos/Levels/sc_level_pack/Dialogs/MainDialog.dlg"

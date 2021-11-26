@@ -6,7 +6,7 @@ local util = worldGlobals.CreateUtil(worldInfo)
 local talosProgress = nexGetTalosProgress(worldInfo)
 
 if terminal == util.terminal then
-  -- create temporal chapter, prevent not saving the level
+  -- create a temporary ChapterInfo object to prevent the level from not being saved
   local curr = worldInfo:GetCurrentChapter()
   local temp = SpawnEntityByClass(worldInfo, curr:GetPlacement(), "CChapterInfoEntity")
   temp:Start()
@@ -14,6 +14,7 @@ if terminal == util.terminal then
   curr:Start()
   terminal:EnableASCIIAnimation(true)
 
+  -- move switch to invisible range
   if switch ~= nil then
     local p = switch:GetPlacement()
     p.vy = -1000
@@ -31,7 +32,7 @@ RunHandled(
       finished = true
       terminal:EnableASCIIAnimation(false)
 
-      -- calculate the time
+      -- calculate level time
       local time = worldInfo:GetTimePassedFromTimer()
       local str
       -- judge if it is new record
@@ -46,12 +47,13 @@ RunHandled(
     end
   end,
 
-  -- loading the level
+  -- load the level
   On(CustomEvent(terminal, "TerminalEvent_0")),
   function ()
     local levelIndex = talosProgress:GetCodeValue("Level")
+    -- load the level, if not exists, then next level, else the 1st level
     local level
-    for key in pairs(util.levels) do
+    for key in ipairs(util.levels) do
       if key >= levelIndex then
         level = util.levels[levelIndex]
         break
@@ -63,7 +65,7 @@ RunHandled(
     worldInfo:StartLevel(level.levelFile)
   end,
 
-  -- level record
+  -- show level record
   OnEvery(CustomEvent(terminal, "TerminalEvent_1")),
   function ()
     local str
@@ -86,16 +88,18 @@ RunHandled(
     terminal:AddString(str .. util.strings.CommonPrompt)
   end,
 
-  -- close the fences and barriers
   On(Event(terminal.Stopped)),
   function ()
     if terminal == util.terminal then
+      -- lower the fences
       if fences ~= nil then
         fences:Open()
       end
+      -- disable the barriers
       if barriers ~= nil then
         barriers:Disable()
       end
+      -- trigger the switch
       if switch ~= nil then
         if switch:IsActivated() then
           switch:Deactivate()

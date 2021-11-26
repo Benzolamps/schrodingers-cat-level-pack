@@ -1,12 +1,12 @@
---- 所有关卡集合
+--- all level list
 local levels = {}
 
---- 根据关卡信息创建关卡
---- @param levelTitle string 关卡标题
---- @param neededMechanics string 所需道具
---- @param levelFile number 关卡文件
---- @param levelIndex number 关卡序号
---- @return table 生成的关卡对象
+--- create level by level info
+--- @param levelTitle string level title
+--- @param neededMechanics string needed mechanics
+--- @param levelFile number level file
+--- @param levelIndex number level index
+--- @return table level object created
 worldGlobals.CreateLevel = function (levelTitle, neededMechanics, levelFile, levelIndex)
   local level = {}
   level.levelTitle = levelTitle
@@ -17,7 +17,7 @@ worldGlobals.CreateLevel = function (levelTitle, neededMechanics, levelFile, lev
   return level
 end
 
---- 字符串常量
+--- string constants
 local strings = {
   CommonPrompt = [[<span class="strong">&gt;&gt;&gt; </span>]],
   Congratulations = TranslateString("TTRS:ScLevelPack.Congratulations=Congratulations!\n\n"),
@@ -27,32 +27,31 @@ local strings = {
   LevelRecordInfoNotFinish = TranslateString("TTRS:ScLevelPack.LevelRecordInfoNotFinish=%1 [%2]\nLevel File: %3\nLevel Best Time: Infinity\n\n")
 }
 
---- 缓存每个关卡的util对象
+--- cache each level util
 local utilMap = {}
 
---- 创建util对象
---- @param worldInfo table WorldInfo对象
+--- create util object
+--- @param worldInfo table worldInfo object
 --- @return table
 worldGlobals.CreateUtil = function (worldInfo)
-  -- 直接获取当前WorldInfo已生成的util对象
+  -- get current worldInfo util object directly
   if utilMap[worldInfo] then return utilMap[worldInfo] end
 
-  -- 获取角色
+  -- get the player
   local player = Wait(Event(worldInfo.PlayerBorn)):GetBornPlayer()
 
-  -- 获取终点终端
+  -- get the end terminal
   local terminal = worldInfo:GetEntityByName("TerminalEnd")
 
   -- talosProgress : CTalosProgress
-  -- 获取TalosProgress对象
   local talosProgress = nexGetTalosProgress(worldInfo)
 
-  --- 定义util对象
-  --- @field player table 角色对象
-  --- @field terminal table 终点终端对象
-  --- @field levels table 所有关卡集合
-  --- @field strings table 字符串常量
-  --- @field currentLevel table 当前关卡对象
+  --- define util object
+  --- @field player table player object
+  --- @field terminal table end terminal object
+  --- @field levels table all level list
+  --- @field strings table constants
+  --- @field currentLevel table current level object
   local util = {
     player = player,
     terminal = terminal,
@@ -61,29 +60,29 @@ worldGlobals.CreateUtil = function (worldInfo)
     currentLevel = nil
   }
 
-  -- 获取当前关卡
+  -- get current level
   local levelFile = worldInfo:GetWorldFileName()
   for _, level in ipairs(levels) do
-    --- 获取关卡最佳时间
-    --- @return number 最佳时间
+    --- get the level time
+    --- @return number level time
     level.GetLevelTime = function ()
       return talosProgress:GetCodeValue("Level" .. level.levelIndex .. "_TIME") / 100
     end
 
-    --- 设置关卡最佳时间
-    --- @param time number 最佳时间
+    --- set the level time
+    --- @param time number level time
     level.SetLevelTime = function (time)
       talosProgress:SetCode("Level" .. level.levelIndex .. "_TIME", time * 100)
     end
 
-    --- 获取关卡是否完成
-    --- @return boolean 是否完成
+    --- is the level finished
+    --- @return boolean finished
     level.IsLevelRead = function ()
       return talosProgress:GetVar("Level" .. level.levelIndex .. "_READ")
     end
 
-    --- 设置关卡是否完成
-    --- @param flag boolean 是否完成
+    --- set the level finished
+    --- @param flag boolean finished
     level.SetLevelRead = function (flag)
       if flag then
         talosProgress:SetVar("Level" .. level.levelIndex .. "_READ")
@@ -92,18 +91,18 @@ worldGlobals.CreateUtil = function (worldInfo)
       end
     end
 
-    -- 若关卡最佳时间大于0, 则标记为已完成
+    -- if the level time > 0, finished
     level.SetLevelRead(level.GetLevelTime() > 0)
 
-    -- 如果关卡文件与当前关卡文件相同, 标记为当前关卡
+    -- set current level
     if levelFile == level.levelFile then
      util.currentLevel = level
      talosProgress:SetCode("Level", util.currentLevel.levelIndex)
     end
   end
 
-  --- 格式化字符串
-  --- @param str string 要格式化的字符串
+  --- format string
+  --- @param str string string formatting
   util.FormatString = function (str, ...)
     for i, v in ipairs({...}) do
       if string.find(str, '%%' .. i) then
@@ -113,30 +112,30 @@ worldGlobals.CreateUtil = function (worldInfo)
     return str
   end
 
-  --- 当满足条件时等待
-  --- @param predicate function 条件
+  --- wait while condition meets
+  --- @param predicate function condition
   util.WaitWhile = function (predicate)
     while predicate() do
       Wait(Delay(0.1))
     end
   end
 
-  --- 等待直到满足条件
-  --- @param predicate function 条件
+  --- wait until condition meets
+  --- @param predicate function condition
   util.WaitUntil = function (predicate)
     repeat
       Wait(Delay(0.1))
     until predicate()
   end
 
-  --- 等待直到终点终端启动
+  --- wait end terminal started
   util.WaitTerminal = function ()
     Wait(Event(terminal.Started))
   end
 
-  --- 获取指定区域内指定物体的个数
-  --- @param entityStr string 物体类字符串
-  --- @param areaDetector table 区域
+  --- judge the counts of specified entity in specified area
+  --- @param entityStr string entity class string
+  --- @param areaDetector table area
   --- @return number
   util.EntityCountInArea = function (entityStr, areaDetector)
     if nil == worldInfo then return 0 end
@@ -151,35 +150,35 @@ worldGlobals.CreateUtil = function (worldInfo)
     return count
   end
 
-  --- 判断指定区域内是否含有指定物体
-  --- @param entityStr string 物体类字符串
-  --- @param areaDetector table 区域
+  --- judge if there is specified entity in specified area
+  --- @param entityStr string entity class string
+  --- @param areaDetector table area
   --- @return boolean
   util.ExistEntityInArea = function (entityStr, areaDetector)
     return util.EntityCountInArea(entityStr, areaDetector) > 0
   end
 
-  --- 判断角色是否在指定区域内
-  --- @param areaDetector table 区域
+  --- judge if player is in specified area
+  --- @param areaDetector table area
   --- @return boolean
   util.IsPlayerInArea = function (areaDetector)
     local vEntity = player:GetPlacement():GetVect()
     return areaDetector:IsPointInArea(vEntity, 0.5)
   end
 
-  --- 展示重置消息
+  --- show the reset message
   util.ResetMessage = function ()
     player:ShowMessageOnHUD("TTRS:Hint.HoldToReset=Hold {plcmdHome} to reset")
   end
 
-  --- 判断时间记录仪是否启动
+  --- judge if the time switch active
   --- @return boolean
   util.IsTimeSwitchActive = function ()
     if not worldInfo:IsTimeSwitchActive() then return false end
     return true
   end
 
-  --- 判断时间记录仪是否正在播放
+  --- judge if the time switch playing
   --- @return boolean
   util.IsTimeSwitchPlaying = function ()
     if not worldInfo:IsTimeSwitchActive() then return false end
@@ -187,7 +186,7 @@ worldGlobals.CreateUtil = function (worldInfo)
     return true
   end
 
-  -- 判断时间记录仪是否正在记录
+  -- judge if the time switch recording
   --- @return boolean
   util.IsTimeSwitchRecording = function ()
     if not worldInfo:IsTimeSwitchActive() then return false end
@@ -199,7 +198,7 @@ worldGlobals.CreateUtil = function (worldInfo)
   return util
 end
 
--- 加载关卡
+-- load the level packs
 local levelPackIndex = 0
 repeat
   levelPackIndex = levelPackIndex + 1

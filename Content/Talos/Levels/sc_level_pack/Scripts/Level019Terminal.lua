@@ -3,14 +3,14 @@ local util = worldGlobals.CreateUtil(worldInfo)
 -- talosProgress : CTalosProgress
 local talosProgress = nexGetTalosProgress(worldInfo)
 
---- 获取阶段 1-A 2-B 3-C
---- @return number 阶段
+--- get the stage 1-A 2-B 3-C
+--- @return number stage
 local function GetStage()
   return talosProgress:GetCodeValue("Code_TS_Stage")
 end
 
---- 设置阶段
---- @param stage number 阶段
+--- set the stage
+--- @param stage number stage
 local function SetStage(stage)
   if corIsAppEditor() then
     print('stage: ' .. stage)
@@ -18,14 +18,14 @@ local function SetStage(stage)
   talosProgress:SetCode("Code_TS_Stage", stage)
 end
 
---- 获取密码
---- @return number 密码
+--- get the code
+--- @return number code
 local function GetCode()
   return talosProgress:GetCodeValue("Code_TS_Code")
 end
 
---- 设置密码
---- @param code number 密码
+--- set the code
+--- @param code number code
 local function SetCode(code)
   if corIsAppEditor() then
     print('code: ' .. code)
@@ -35,14 +35,14 @@ local function SetCode(code)
   talosProgress:SetCode("Code_TS_CodeSuffix", code % 1000)
 end
 
---- 获取密码是否已读 0-未读 1-已读 2-(在记录状态下为未读, 由记录状态转变为播放状态时转为已读)
---- @return number 是否已读
+--- get the code read 0-unread 1-read 2-(unread during recording, change to read when playing started)
+--- @return number code read
 local function GetCodeRead()
   return talosProgress:GetCodeValue("Code_TS_CodeRead")
 end
 
---- 设置密码是否已读
---- @param codeRead number 是否已读
+--- set the code read
+--- @param codeRead number code read
 local function SetCodeRead(codeRead)
   if corIsAppEditor() then
     print('codeRead: ' .. codeRead)
@@ -50,8 +50,8 @@ local function SetCodeRead(codeRead)
   talosProgress:SetCode("Code_TS_CodeRead", codeRead)
 end
 
---- 设置正在记录
---- @param recording boolean 是否正在记录
+--- set recording
+--- @param recording boolean recording
 local function SetRecording(recording)
   if corIsAppEditor() then
     print('recording: ' .. tostring(recording))
@@ -63,8 +63,8 @@ local function SetRecording(recording)
   end
 end
 
--- 初始化
---- 缓存的密码
+-- init data
+--- cache code
 local cacheCode = 0
 SetStage(1)
 SetCode(mthRndRangeL(100000, 999999))
@@ -75,23 +75,23 @@ RunHandled(
   function()
     Wait(All(Events(doors.Unlocked)))
   end,
-  -- 开始记录, 缓存当前密码, 设置状态
+  -- start recording, cache current code, set recording
   OnEvery(CustomEvent("TimeSwitchRecordingStarted")),
   function()
     cacheCode = GetCode()
     SetRecording(true)
   end,
-  -- 结束记录, 设置状态
+  -- end recording, set not recording
   OnEvery(CustomEvent("TimeSwitchRecordingEnded")),
   function()
     SetRecording(false)
   end,
-  -- 记录中断, 清空缓存
+  -- recoding aborted, clear the cache
   OnEvery(CustomEvent("TimeSwitchRecordingAborted")),
   function()
     cacheCode = 0
   end,
-  -- 开始播放, 将当前密码设置为缓存的密码, 将是否已读由2变1
+  -- playing started, assign cache code to current code, code read 2 to 1
   OnEvery(CustomEvent("TimeSwitchPlayingStarted")),
   function()
     SetCode(cacheCode)
@@ -99,7 +99,7 @@ RunHandled(
       SetCodeRead(1)
     end
   end,
-  -- 重置密码
+  -- reset the code
   OnEvery(CustomEvent(terminal, "TerminalEvent_6")),
   function()
     if (GetStage() == 1) then
@@ -113,7 +113,7 @@ RunHandled(
       end
     end
   end,
-  -- 密码正确
+  -- code accepted
   OnEvery(CustomEvent(terminal, "TerminalEvent_7")),
   function()
     doors[GetStage()]:Open()

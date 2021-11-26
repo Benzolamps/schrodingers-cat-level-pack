@@ -1,6 +1,6 @@
 local util = worldGlobals.CreateUtil(worldInfo)
 
---- 角色被困
+--- player stuck forever
 --- @param detector table
 local function PlayerStuck(detector)
   RunHandled(
@@ -13,7 +13,7 @@ local function PlayerStuck(detector)
   )
 end
 
---- 角色临时被困
+--- player stuck temporarily
 --- @param detector table
 local function PlayerStuckTemp(detector)
   RunHandled(
@@ -26,7 +26,7 @@ local function PlayerStuckTemp(detector)
   )
 end
 
---- 物品被困
+--- item stuck
 --- @param detector table
 local function ItemStuck(detector)
   RunHandled(
@@ -40,7 +40,7 @@ local function ItemStuck(detector)
   )
 end
 
---- 门未开, 无干扰器, 角色被困
+--- plasma closed, no jammer, player stuck
 --- @param entities table
 local function PlasmaStuck(entities)
   if not entities then return end
@@ -63,14 +63,14 @@ local function PlasmaStuck(entities)
   end
 end
 
---- 执行检测
+--- run detectors
 --- @param detectors table
 --- @param func function
 local function RunDetectors(detectors, func)
   if detectors then
-    if not #detectors > 0 then detectors = {detectors} end
-    for i = 1, #detectors do
-      RunAsync(function() func(detectors[i]) end)
+    if not (#detectors > 0) then detectors = {detectors} end
+    for _, detector in ipairs(detectors) do
+      RunAsync(function() func(detector) end)
     end
   end
 end
