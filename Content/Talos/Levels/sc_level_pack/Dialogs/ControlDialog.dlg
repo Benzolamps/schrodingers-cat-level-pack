@@ -1,7 +1,7 @@
-# 字符串常量
+# string constants
 string CommonPrompt [[TTRS:notrans=<span class="strong">&gt;&gt;&gt; </span>]]
 
-# 展示开机文字
+# show booting text
 terminal when (Booting) {
   text: [[TTRS:ScLevelPack.InitCmd=Initiating command prompt.%w1.%w1.%w1 %w9Done.
 
@@ -9,7 +9,7 @@ terminal when (Booting) {
   goto: Menu
 }
 
-# 展示关机文字
+# show terminating text
 terminal when (Exit) {
   text: [[TTRS:ScLevelPack.TermCmd=
 Terminating session.%w1.%w1.%w1
@@ -18,13 +18,13 @@ Session terminated.
   exit
 }
 
-# 展示菜单
+# show menu
 terminal when (Menu or MessageBoardInterface_Off) {
   prompt: "%t'CommonPrompt'"
   next: MenuOptions
 }
 
-# 展示菜单选项
+# shoe menu options
 player when (MenuOptions) {
   options: {
     "TTRS:ScLevelPack.NextLevel=Next Level" next: NextLevel
@@ -34,23 +34,23 @@ player when (MenuOptions) {
   }
 }
 
-# 展示关卡选择标题
+# show level select title
 terminal when (MessageBoardTitle) {
   prompt: "%t'CommonPrompt'"
   text: "TTRS:ScLevelPack.SelectWhichLevel=Please select which level you want to play:"
 }
 
-# 加载关卡
+# load level
 terminal when (LevelSelected) {
   prompt: "TTRS:notrans=%e0%t'CommonPrompt'"
   next: MenuOptions
 }
 
-# 查看关卡记录
+# show level record
 terminal when (LevelRecord) {
   prompt: "TTRS:notrans=%e1%t'CommonPrompt'"
   next: MenuOptions
 }
 
-# 下一关
+# next level
 terminal when (NextLevel) { notext set: Level;+=1; goto: LevelSelected }
