@@ -1,6 +1,6 @@
 local util = worldGlobals.CreateUtil(worldInfo)
 
---- 0正常, 1记录, 2播放
+--- 0-none, 1-recording, 2-playing
 local lastState = 0
 
 RunHandled(
