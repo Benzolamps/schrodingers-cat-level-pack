@@ -5,14 +5,21 @@ local util = worldGlobals.CreateUtil(worldInfo)
 -- talosProgress : CTalosProgress
 local talosProgress = nexGetTalosProgress(worldInfo)
 
-if (terminal == util.terminal) then
-  -- create temporal chapter, prevent not saving the level
+if terminal == util.terminal then
+  -- create a temporary ChapterInfo object to prevent the level from not being saved
   local curr = worldInfo:GetCurrentChapter()
   local temp = SpawnEntityByClass(worldInfo, curr:GetPlacement(), "CChapterInfoEntity")
   temp:Start()
   Wait(Delay(0.1))
   curr:Start()
   terminal:EnableASCIIAnimation(true)
+
+  -- move switch to invisible range
+  if switch ~= nil then
+    local p = switch:GetPlacement()
+    p.vy = -1000
+    switch:SetPlacement(p)
+  end
 end
 
 local finished = false
@@ -25,7 +32,7 @@ RunHandled(
       finished = true
       terminal:EnableASCIIAnimation(false)
 
-      -- calculate the time
+      -- calculate level time
       local time = worldInfo:GetTimePassedFromTimer()
       local str
       -- judge if it is new record
@@ -40,30 +47,29 @@ RunHandled(
     end
   end,
 
-  -- loading the level
+  -- load the level
   On(CustomEvent(terminal, "TerminalEvent_0")),
   function ()
     local levelIndex = talosProgress:GetCodeValue("Level")
+    -- load the level, if not exists, then next level, else the 1st level
     local level
-    for key in pairs(util.levels) do
-      if (key >= levelIndex) then
+    for key in ipairs(util.levels) do
+      if key >= levelIndex then
         level = util.levels[levelIndex]
         break
       end
     end
-    if (nil == level) then
-      level = util.levels[1]
-    end
+    level = level or util.levels[1]
     terminal:AddString(util.FormatString(util.strings.Opening, level.levelFile) .. util.strings.CommonPrompt)
     Wait(Delay(2))
     worldInfo:StartLevel(level.levelFile)
   end,
 
-  -- level record
+  -- show level record
   OnEvery(CustomEvent(terminal, "TerminalEvent_1")),
   function ()
     local str
-    if (util.currentLevel.GetLevelTime() > 0) then
+    if util.currentLevel.GetLevelTime() > 0 then
       str = util.FormatString(
         util.strings.LevelRecordInfo,
         util.currentLevel.levelTitle,
@@ -82,15 +88,24 @@ RunHandled(
     terminal:AddString(str .. util.strings.CommonPrompt)
   end,
 
-  -- close the fences and barriers
   On(Event(terminal.Stopped)),
   function ()
     if terminal == util.terminal then
-      if fences then
+      -- lower the fences
+      if fences ~= nil then
         fences:Open()
       end
-      if barriers then
+      -- disable the barriers
+      if barriers ~= nil then
         barriers:Disable()
+      end
+      -- trigger the switch
+      if switch ~= nil then
+        if switch:IsActivated() then
+          switch:Deactivate()
+        else
+          switch:Activate()
+        end
       end
     end
   end

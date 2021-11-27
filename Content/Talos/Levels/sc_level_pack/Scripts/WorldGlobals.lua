@@ -1,6 +1,12 @@
+--- all level list
 local levels = {}
 
--- create level
+--- create level by level info
+--- @param levelTitle string level title
+--- @param neededMechanics string needed mechanics
+--- @param levelFile number level file
+--- @param levelIndex number level index
+--- @return table level object created
 worldGlobals.CreateLevel = function (levelTitle, neededMechanics, levelFile, levelIndex)
   local level = {}
   level.levelTitle = levelTitle
@@ -8,8 +14,10 @@ worldGlobals.CreateLevel = function (levelTitle, neededMechanics, levelFile, lev
   level.levelFile = levelFile
   level.levelIndex = levelIndex
   levels[levelIndex] = level
+  return level
 end
 
+--- string constants
 local strings = {
   CommonPrompt = [[<span class="strong">&gt;&gt;&gt; </span>]],
   Congratulations = TranslateString("TTRS:ScLevelPack.Congratulations=Congratulations!\n\n"),
@@ -19,39 +27,62 @@ local strings = {
   LevelRecordInfoNotFinish = TranslateString("TTRS:ScLevelPack.LevelRecordInfoNotFinish=%1 [%2]\nLevel File: %3\nLevel Best Time: Infinity\n\n")
 }
 
+--- cache each level util
 local utilMap = {}
 
--- create util object
+--- create util object
+--- @param worldInfo table worldInfo object
+--- @return table
 worldGlobals.CreateUtil = function (worldInfo)
-  if (utilMap[worldInfo]) then return utilMap[worldInfo] end
+  -- get current worldInfo util object directly
+  if utilMap[worldInfo] then return utilMap[worldInfo] end
 
   -- get the player
   local player = Wait(Event(worldInfo.PlayerBorn)):GetBornPlayer()
 
-  -- get the terminal
+  -- get the end terminal
   local terminal = worldInfo:GetEntityByName("TerminalEnd")
 
   -- talosProgress : CTalosProgress
   local talosProgress = nexGetTalosProgress(worldInfo)
 
-  -- define util
-  utilMap[worldInfo] = {
+  --- define util object
+  --- @field player table player object
+  --- @field terminal table end terminal object
+  --- @field levels table all level list
+  --- @field strings table constants
+  --- @field currentLevel table current level object
+  local util = {
     player = player,
     terminal = terminal,
     levels = levels,
-    strings = strings
+    strings = strings,
+    currentLevel = nil
   }
 
+  -- get current level
   local levelFile = worldInfo:GetWorldFileName()
   for _, level in ipairs(levels) do
+    --- get the level time
+    --- @return number level time
     level.GetLevelTime = function ()
       return talosProgress:GetCodeValue("Level" .. level.levelIndex .. "_TIME") / 100
     end
 
+    --- set the level time
+    --- @param time number level time
     level.SetLevelTime = function (time)
       talosProgress:SetCode("Level" .. level.levelIndex .. "_TIME", time * 100)
     end
 
+    --- is the level finished
+    --- @return boolean finished
+    level.IsLevelRead = function ()
+      return talosProgress:GetVar("Level" .. level.levelIndex .. "_READ")
+    end
+
+    --- set the level finished
+    --- @param flag boolean finished
     level.SetLevelRead = function (flag)
       if flag then
         talosProgress:SetVar("Level" .. level.levelIndex .. "_READ")
@@ -60,48 +91,53 @@ worldGlobals.CreateUtil = function (worldInfo)
       end
     end
 
-    level.IsLevelRead = function ()
-      return talosProgress:GetVar("Level" .. level.levelIndex .. "_READ")
-    end
-
+    -- if the level time > 0, finished
     level.SetLevelRead(level.GetLevelTime() > 0)
+
+    -- set current level
     if levelFile == level.levelFile then
-     utilMap[worldInfo].currentLevel = level
-     talosProgress:SetCode("Level", utilMap[worldInfo].currentLevel.levelIndex)
+     util.currentLevel = level
+     talosProgress:SetCode("Level", util.currentLevel.levelIndex)
     end
   end
 
-  -- wait while
-  utilMap[worldInfo].FormatString = function (str, ...)
+  --- format string
+  --- @param str string string formatting
+  util.FormatString = function (str, ...)
     for i, v in ipairs({...}) do
-      if (string.find(str, '%%' .. i)) then
+      if string.find(str, '%%' .. i) then
         str = string.gsub(str, '%%' .. i, tostring(v))
       end
     end
     return str
   end
 
-  -- wait while
-  utilMap[worldInfo].WaitWhile = function (predicate)
+  --- wait while condition meets
+  --- @param predicate function condition
+  util.WaitWhile = function (predicate)
     while predicate() do
       Wait(Delay(0.1))
     end
   end
 
-  -- wait until
-  utilMap[worldInfo].WaitUntil = function (predicate)
+  --- wait until condition meets
+  --- @param predicate function condition
+  util.WaitUntil = function (predicate)
     repeat
       Wait(Delay(0.1))
     until predicate()
   end
 
-  -- wait terminal started
-  utilMap[worldInfo].WaitTerminal = function ()
+  --- wait end terminal started
+  util.WaitTerminal = function ()
     Wait(Event(terminal.Started))
   end
 
-  -- judge the counts of specified entity in specified area
-  utilMap[worldInfo].EntityCountInArea = function (entityStr, areaDetector)
+  --- judge the counts of specified entity in specified area
+  --- @param entityStr string entity class string
+  --- @param areaDetector table area
+  --- @return number
+  util.EntityCountInArea = function (entityStr, areaDetector)
     if nil == worldInfo then return 0 end
     local count = 0
     local all = worldInfo:GetAllEntitiesOfClass(entityStr)
@@ -114,48 +150,56 @@ worldGlobals.CreateUtil = function (worldInfo)
     return count
   end
 
-  -- judge if there is specified entity in specified area
-  utilMap[worldInfo].ExistEntityInArea = function (entityStr, areaDetector)
-    return 0 < utilMap[worldInfo].EntityCountInArea(entityStr, areaDetector)
+  --- judge if there is specified entity in specified area
+  --- @param entityStr string entity class string
+  --- @param areaDetector table area
+  --- @return boolean
+  util.ExistEntityInArea = function (entityStr, areaDetector)
+    return util.EntityCountInArea(entityStr, areaDetector) > 0
   end
 
-  -- judge if player is in specified area
-  utilMap[worldInfo].IsPlayerInArea = function (areaDetector)
-    if nil == player then return false end
+  --- judge if player is in specified area
+  --- @param areaDetector table area
+  --- @return boolean
+  util.IsPlayerInArea = function (areaDetector)
     local vEntity = player:GetPlacement():GetVect()
     return areaDetector:IsPointInArea(vEntity, 0.5)
   end
 
-  -- show the reset message
-  utilMap[worldInfo].ResetMessage = function ()
-    if nil == player then return end
+  --- show the reset message
+  util.ResetMessage = function ()
     player:ShowMessageOnHUD("TTRS:Hint.HoldToReset=Hold {plcmdHome} to reset")
   end
 
-  -- judge if the time switch active
-  utilMap[worldInfo].IsTimeSwitchActive = function ()
-    if nil == worldInfo then return false end
-    if worldInfo:IsTimeSwitchActive() then return true end
-    if utilMap[worldInfo].IsTimeSwitchPlaying() then return true end
-    return false
+  --- judge if the time switch active
+  --- @return boolean
+  util.IsTimeSwitchActive = function ()
+    if not worldInfo:IsTimeSwitchActive() then return false end
+    return true
   end
 
-  -- judge if the time switch playing
-  utilMap[worldInfo].IsTimeSwitchPlaying = function ()
-    if nil == worldInfo then return false end
-    return 0 < #worldInfo:GetAllEntitiesOfClass("CPastPlayerPuppetEntity")
+  --- judge if the time switch playing
+  --- @return boolean
+  util.IsTimeSwitchPlaying = function ()
+    if not worldInfo:IsTimeSwitchActive() then return false end
+    local pastPlayerCount = #worldInfo:GetAllEntitiesOfClass("CPastPlayerPuppetEntity")
+    if pastPlayerCount <= 0 then return false end
+    return true
   end
 
   -- judge if the time switch recording
-  utilMap[worldInfo].IsTimeSwitchRecording = function ()
-    if nil == worldInfo then return false end
+  --- @return boolean
+  util.IsTimeSwitchRecording = function ()
     if not worldInfo:IsTimeSwitchActive() then return false end
-    if utilMap[worldInfo].IsTimeSwitchPlaying() then return false end
+    if util.IsTimeSwitchPlaying() then return false end
     return true
   end
-  return utilMap[worldInfo]
+
+  utilMap[worldInfo] = util
+  return util
 end
 
+-- load the level packs
 local levelPackIndex = 0
 repeat
   levelPackIndex = levelPackIndex + 1

@@ -1,3 +1,4 @@
+# string constants
 string Code_TS_DoorAString "TTRS:ScLevelPack.CodeTS.DoorA=Door A"
 string Code_TS_DoorBString "TTRS:ScLevelPack.CodeTS.DoorB=Door B"
 string Code_TS_DoorCString "TTRS:ScLevelPack.CodeTS.DoorC=Door C"
@@ -9,6 +10,7 @@ string Code_TS_UnlockDoor "TTRS:ScLevelPack.CodeTS.UnlockDoor=Unlock "
 string Code_TS_DoorEnterCodeString [[TTRS:ScLevelPack.CodeTS.DoorEnterCode= is protected with a code.%w9
 Please enter the code:%w9]]
 
+# add options to menu
 player when (MenuOptions and Code_TS_Stage < 4) {
   options: {
     "TTRS:notrans=open device_manager.exe"
@@ -17,11 +19,13 @@ player when (MenuOptions and Code_TS_Stage < 4) {
   }
 }
 
+# show unlock door options
 terminal when (Code_TS_List) {
   prompt: "%t'CommonPrompt'"
   next: Code_TS_UnlockDoorOptions
 }
 
+# show code read
 player when (Code_TS_UnlockDoorOptions and Code_TS_CodeRead == 1) {
   options: {
     "TTRS:notrans=open code.txt"
@@ -30,22 +34,27 @@ player when (Code_TS_UnlockDoorOptions and Code_TS_CodeRead == 1) {
   }
 }
 
+# unlock Door A option
 player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 0) {
   options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorAString'" next: Code_TS_UnlockA }
 }
 
+# unlock Door B option
 player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 1) {
   options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorBString'" next: Code_TS_UnlockB }
 }
 
+# unlock Door C option
 player when (Code_TS_UnlockDoorOptions and Code_TS_Stage > 2) {
   options: { "%t'Code_TS_UnlockDoor'%t'Code_TS_DoorCString'" next: Code_TS_UnlockC }
 }
 
+# exit option
 player when (Code_TS_UnlockDoorOptions) {
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Menu }
 }
 
+# show code read (Door A, Door B)
 terminal when (Code_TS_ShowCode and Code_TS_Stage < 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
@@ -56,6 +65,7 @@ terminal when (Code_TS_ShowCode and Code_TS_Stage < 3) {
   goto: Code_TS_List
 }
 
+# show code read (Door C, hide 3th code)
 terminal when (Code_TS_ShowCode and Code_TS_Stage == 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
@@ -66,6 +76,7 @@ terminal when (Code_TS_ShowCode and Code_TS_Stage == 3) {
   goto: Code_TS_List
 }
 
+# Door A unlocked
 terminal when (Code_TS_UnlockA and Code_TS_Stage > 1) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorAString'%t'Code_TS_DoorUnlockedString'
@@ -74,6 +85,7 @@ terminal when (Code_TS_UnlockA and Code_TS_Stage > 1) {
   goto: Code_TS_List
 }
 
+# Door B unlocked
 terminal when (Code_TS_UnlockB and Code_TS_Stage > 2) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorBString'%t'Code_TS_DoorUnlockedString'
@@ -82,6 +94,7 @@ terminal when (Code_TS_UnlockB and Code_TS_Stage > 2) {
   goto: Code_TS_List
 }
 
+# Door C unlocked
 terminal when (Code_TS_UnlockC and Code_TS_Stage > 3) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorCString'%t'Code_TS_DoorUnlockedString'
@@ -90,6 +103,7 @@ terminal when (Code_TS_UnlockC and Code_TS_Stage > 3) {
   goto: Code_TS_List
 }
 
+# Door A enter code
 terminal when (Code_TS_UnlockA and Code_TS_Stage == 1) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorAString'%t'Code_TS_DoorEnterCodeString'
@@ -97,6 +111,7 @@ terminal when (Code_TS_UnlockA and Code_TS_Stage == 1) {
 ]]
 }
 
+# Door B enter code
 terminal when (Code_TS_UnlockB and Code_TS_Stage == 2) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorBString'%t'Code_TS_DoorEnterCodeString'
@@ -104,6 +119,7 @@ terminal when (Code_TS_UnlockB and Code_TS_Stage == 2) {
 ]]
 }
 
+# Door C enter code
 terminal when (Code_TS_UnlockC and Code_TS_Stage == 3) {
   text: [[TTRS:notrans=
 %t'Code_TS_DoorCString'%t'Code_TS_DoorEnterCodeString'
@@ -111,16 +127,19 @@ terminal when (Code_TS_UnlockC and Code_TS_Stage == 3) {
 ]]
 }
 
+# start enter code
 terminal when (Code_TS_UnlockA or Code_TS_UnlockB or Code_TS_UnlockC) {
   prompt: "%t'CommonPrompt'"
-  set: Code_TS_Attempts;=3;
+  setlocal: Code_TS_Attempts;=3;
   goto: Code_TS_EnterCode
 }
 
+# enter code input area
 terminal when (Code_TS_EnterCode) {
   enter_code: Code_TS_Code Code_TS_CodeOK Code_TS_CodeWrong
 }
 
+# time switch not recording, code accepted
 terminal when (Code_TS_CodeOK and not Code_TS_Recording) {
   text: [[TTRS:ScLevelPack.CodeTS.CodeUnlocked=
 Code accepted.%w9
@@ -130,6 +149,7 @@ Done.%w9
 ]]
 }
 
+# time switch recording, code accepted
 terminal when (Code_TS_CodeOK and Code_TS_Recording) {
   text: [[TTRS:ScLevelPack.CodeTS.CodeUnlockFailed=
 Code accepted.%w9
@@ -139,14 +159,16 @@ Failed.%w3 Account has been frozen!%w9
 ]]
 }
 
+# after code accepted exit
 terminal when (Code_TS_CodeOK) {
   prompt: "%t'CommonPrompt'"
-  set: Code_TS_Attempts;=3;
+  setlocal: Code_TS_Attempts;=3;
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
 }
 
+# code incorrect show attempts
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts > 1) {
-  set: Code_TS_Attempts;-=1;
+  setlocal: Code_TS_Attempts;-=1;
   text: [[TTRS:ScLevelPack.CodeTS.CodeAttempts=
 Code incorrect!%s0%w9
 Try Again (%O'Code_TS_Attempts' more tries left).%w9
@@ -155,11 +177,13 @@ Please enter the code:%w9
 ]]
 }
 
+# retry enter code
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts > 1) {
   prompt: "%t'CommonPrompt'"
   goto: Code_TS_EnterCode
 }
 
+# code incorrect failed attempted
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts == 1) {
   text: [[TTRS:ScLevelPack.CodeTS.CodeFailed=
 Code incorrect!%s0%w9
@@ -169,29 +193,34 @@ Exiting session.%w9
 ]]
 }
 
+# hack it
 terminal when (Code_TS_CodeWrong and Code_TS_Attempts == 1) {
   prompt: "%t'CommonPrompt'"
   goto: Code_TS_Hack
 }
 
+# Door A hack it options
 terminal when (Code_TS_Hack and Code_TS_Stage == 1) {
   options: {
     "TTRS:notrans=SELECT code FROM sys_dev WHERE sn = 'A'" short: "TTRS:ScLevelPack.CodeTS.HackIt=Hack it" next: Code_TS_GetCode
   }
 }
 
+# Door B hack it options
 terminal when (Code_TS_Hack and Code_TS_Stage == 2) {
   options: {
     "TTRS:notrans=SELECT code FROM sys_dev WHERE sn = 'B'" short: "TTRS:ScLevelPack.CodeTS.HackIt=Hack it" next: Code_TS_GetCode
   }
 }
 
+# Door C hack it options
 terminal when (Code_TS_Hack and Code_TS_Stage == 3) {
   options: {
     "TTRS:notrans=SELECT code FROM sys_dev WHERE sn = 'C'" short: "TTRS:ScLevelPack.CodeTS.HackIt=Hack it" next: Code_TS_GetCode
   }
 }
 
+# querying database
 terminal when (Code_TS_GetCode) {
   text: [[TTRS:ScLevelPack.CodeTS.HackQuery=
 Querying.%w9.%w9.%w9.%w9.%w9
@@ -199,6 +228,7 @@ Done.%w9
 ]]
 }
 
+# show result code (Door A, Door B)
 terminal when (Code_TS_GetCode and Code_TS_Stage < 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
@@ -207,17 +237,20 @@ terminal when (Code_TS_GetCode and Code_TS_Stage < 3) {
 ]]
 }
 
+# show result code (Door C, show only the first two)
 terminal when (Code_TS_GetCode and Code_TS_Stage == 3) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
 ▓▓ %O'Code_TS_CodePrefix'%w9%w9%s0████ ]]
 }
 
+# Door C connection lost
 terminal when (Code_TS_GetCode and Code_TS_Stage == 3) {
   text: [[TTRS:ScLevelPack.CodeTS.ConnectionLost=※※ection lost!%w9
 ]]
 }
 
+# code reset (Door A, reset failed)
 terminal when (Code_TS_GetCode and Code_TS_Stage == 1) {
   text: [[TTRS:ScLevelPack.CodeTS.ResetFailed=
 WARNING: Illegal user access detected!%w9
@@ -227,6 +260,7 @@ Failed.%w9%e6
 ]]
 }
 
+# code reset (Door B, Door C, reset done)
 terminal when (Code_TS_GetCode and Code_TS_Stage > 1) {
   text: [[TTRS:ScLevelPack.CodeTS.ResetFinish=
 WARNING: Illegal user access detected!%w9
@@ -236,9 +270,11 @@ Done.%w9%e6
 ]]
 }
 
+# after code reset exit
 terminal when (Code_TS_GetCode) {
   prompt: "%t'CommonPrompt'"
   options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
 }
 
+# load main dialog
 include "Content/Talos/Levels/sc_level_pack/Dialogs/MainDialog.dlg"
