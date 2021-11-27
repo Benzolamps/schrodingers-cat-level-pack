@@ -1,7 +1,9 @@
-6
+8
 ScLevelPack.Level19=跨越时空的密码
 ScLevelPack.Level19.WM=跨越时空的密码 [T]
 ScLevelPack.Level20=人格分裂
 ScLevelPack.Level20.WM=人格分裂 [TFC]
 ScLevelPack.Level21=危机四伏
 ScLevelPack.Level21.WM=危机四伏 [FCR]
+ScLevelPack.Level22=多米诺效应
+ScLevelPack.Level22.WM=多米诺效应 [C]

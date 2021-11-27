@@ -49,7 +49,7 @@ local function PlasmaStuck(entities)
     local plasma = entities[i + 1]
     RunAsync(function ()
       RunHandled(
-        util.WaitTerminal,
+        WaitForever,
         OnEvery(Event(detector.Activated)),
         function()
           detector:Recharge()

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="3">
+		<TetrominoInstances counthint="4">
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
 				<Level>level19</Level>
 				<Puzzle>019</Puzzle>
@@ -13,7 +13,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO20</Name>
 				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level20</Level>
 				<Puzzle>020</Puzzle>
@@ -23,11 +23,21 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO21</Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level21</Level>
 				<Puzzle>021</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level21=Plagued by Crises"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO22</Name>
+				<NeededMechanics>C</NeededMechanics>
+				<Level>level22</Level>
+				<Puzzle>022</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level22=Domino"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

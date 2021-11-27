@@ -61,6 +61,8 @@ RunHandled(
     end
     level = level or util.levels[1]
     terminal:AddString(util.FormatString(util.strings.Opening, level.levelFile) .. util.strings.CommonPrompt)
+    worldInfo:RemoveFromWorldCache(util.currentLevel.levelFile)
+    worldInfo:AddToWorldCache(level.levelFile)
     Wait(Delay(2))
     worldInfo:StartLevel(level.levelFile)
   end,
