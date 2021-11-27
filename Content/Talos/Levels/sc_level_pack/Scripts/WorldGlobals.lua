@@ -182,7 +182,8 @@ worldGlobals.CreateUtil = function (worldInfo)
   --- @return boolean
   util.IsTimeSwitchPlaying = function ()
     if not worldInfo:IsTimeSwitchActive() then return false end
-    if #worldInfo:GetAllEntitiesOfClass("CPastPlayerPuppetEntity") > 0 then return false end
+    local pastPlayerCount = #worldInfo:GetAllEntitiesOfClass("CPastPlayerPuppetEntity")
+    if pastPlayerCount <= 0 then return false end
     return true
   end
 
