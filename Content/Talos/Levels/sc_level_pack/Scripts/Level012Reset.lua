@@ -1,4 +1,4 @@
-local util = worldGlobals.CreateUtil(worldInfo)
+local util = worldGlobals.CreateUtil()
 
 RunHandled(
   WaitForever,

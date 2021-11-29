@@ -1,4 +1,4 @@
-local util = worldGlobals.CreateUtil(worldInfo)
+local util = worldGlobals.CreateUtil()
 
 --- 0-none, 1-recording, 2-playing
 local lastState = 0

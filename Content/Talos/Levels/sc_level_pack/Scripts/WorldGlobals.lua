@@ -31,9 +31,10 @@ local strings = {
 local utilMap = {}
 
 --- create util object
---- @param worldInfo table worldInfo object
 --- @return table
-worldGlobals.CreateUtil = function (worldInfo)
+worldGlobals.CreateUtil = function ()
+  local worldInfo = worldGlobals.worldInfo
+
   -- get current worldInfo util object directly
   if utilMap[worldInfo] then return utilMap[worldInfo] end
 
@@ -177,14 +178,15 @@ worldGlobals.CreateUtil = function (worldInfo)
   --- judge if the time switch active
   --- @return boolean
   util.IsTimeSwitchActive = function ()
-    if not worldInfo:IsTimeSwitchActive() then return false end
-    return true
+    if util.IsTimeSwitchPlaying() then return true end
+    if util.IsTimeSwitchRecording() then return true end
+    return false
   end
 
   --- judge if the time switch playing
   --- @return boolean
   util.IsTimeSwitchPlaying = function ()
-    if not worldInfo:IsTimeSwitchActive() then return false end
+    -- if not worldInfo:IsTimeSwitchActive() then return false end
     local pastPlayerCount = #worldInfo:GetAllEntitiesOfClass("CPastPlayerPuppetEntity")
     if pastPlayerCount <= 0 then return false end
     return true

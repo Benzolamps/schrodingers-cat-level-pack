@@ -1,2 +1,2 @@
-Wait(All(Event(red.ChargedUp), Event(blue.ChargedUp)))
+Wait(Event(fakeFan.Activated))
 fence:Open()
