@@ -9,6 +9,6 @@ RunHandled(
     if mthAbsF(mine:GetLinearVelocity().z) >= 0.01 then return end
     if not util.ExistEntityInArea("CJammerItemEntity", detectorJammer) then return end
     if not util.ExistEntityInArea("CCarriableFanItemEntity", detectorFan) then return end
-    util.player:ShowMessageOnHUD("TTRS:ScLevelPack.SplitHint=Don't forget to press the pressure plate!")
+    util.player: ShowTutorialMessage("TTRS:ScLevelPack.SplitHint=Don't forget to press the pressure plate!", 2, 2)
   end
 )
