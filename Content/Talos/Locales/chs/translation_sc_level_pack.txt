@@ -12,3 +12,6 @@ ScLevelPack.SelectWhichLevel=老铁想玩哪一关呢？
 ScLevelPack.InitCmd=正在初始化命令行.%w1.%w1.%w1%w9完成。\n\n
 ScLevelPack.TermCmd=\n正在终止会话.%w1.%w1.%w1\n会话已终止。\n
 ScLevelPack.EpisodeName=薛定谔之猫——关卡集
+ScLevelPack.CubeFallHint1=看起来方块很容易从炸弹球身上掉落
+ScLevelPack.CubeFallHint2=貌似是个小bug，无伤大雅
+ScLevelPack.CubeFallHint3=重置关卡后，门就会变低，方块就不那么容易掉了
