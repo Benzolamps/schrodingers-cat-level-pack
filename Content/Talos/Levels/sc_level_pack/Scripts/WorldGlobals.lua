@@ -172,7 +172,7 @@ worldGlobals.CreateUtil = function ()
 
   --- show the reset message
   util.ResetMessage = function ()
-    player:ShowMessageOnHUD("TTRS:Hint.HoldToReset=Hold {plcmdHome} to reset")
+    player:ShowTutorialMessage("TTRS:Hint.HoldToReset=Hold {plcmdHome} to reset", 2, 2)
   end
 
   --- judge if the time switch active
