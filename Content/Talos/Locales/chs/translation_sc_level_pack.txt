@@ -1,4 +1,4 @@
-13
+18
 ScLevelPack.Congratulations=牛逼了，老铁！\n\n
 ScLevelPack.CongratulationsNewRecord=牛逼了，老铁！\n破记录了，老铁%w2%s0：%1秒\n\n
 ScLevelPack.Opening=正在打开%1.%w1.%w1.%w1%w9完成。%w30.\n\n
@@ -15,3 +15,5 @@ ScLevelPack.EpisodeName=薛定谔之猫——关卡集
 ScLevelPack.CubeFallHint1=看起来方块很容易从炸弹球身上掉落
 ScLevelPack.CubeFallHint2=貌似是个小bug，无伤大雅
 ScLevelPack.CubeFallHint3=重置关卡后，门就会变低，方块就不那么容易掉了
+ScLevelPack.PoppyHint1=提示1：当你穿过紫门时，时间记录仪会停止
+ScLevelPack.PoppyHint2=提示2：时间记录仪停止回放后，会有一秒左右的延迟
