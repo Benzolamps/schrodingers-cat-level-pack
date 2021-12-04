@@ -65,7 +65,7 @@ RunHandled(
     index = index < 3 and index + 1 or 1
     util.WaitTerminal()
   end,
-  OnEvery(Delay(4)),
+  OnEvery(Delay(7)),
   function ()
     util.player:ShowTutorialMessage(messages[index], 4, 2)
     index = index < 3 and index + 1 or 1
