@@ -6,3 +6,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level21.WM=Plagued by Cris
 terminal when (Level21) { notext set: Level;=21; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level22.WM=Domino [C]" next: Level22 }
 terminal when (Level22) { notext set: Level;=22; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level23.WM=Hermit [R]" next: Level23 }
+terminal when (Level23) { notext set: Level;=23; goto: LevelSelected}

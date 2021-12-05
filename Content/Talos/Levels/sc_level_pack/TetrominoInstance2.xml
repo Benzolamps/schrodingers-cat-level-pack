@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="4">
+		<TetrominoInstances counthint="5">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
@@ -38,6 +38,16 @@
 				<Level>level22</Level>
 				<Puzzle>022</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level22=Domino"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO23</Name>
+				<NeededMechanics>R</NeededMechanics>
+				<Level>level23</Level>
+				<Puzzle>023</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level23=Hermit"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
