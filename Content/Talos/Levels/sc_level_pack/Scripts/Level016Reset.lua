@@ -1,7 +1,7 @@
 local util = worldGlobals.CreateUtil()
 
 RunHandled(
-  util.WaitTerminal,
+  WaitForever,
   OnEvery(Event(detector.Activated)),
   function()
     detector:Recharge()

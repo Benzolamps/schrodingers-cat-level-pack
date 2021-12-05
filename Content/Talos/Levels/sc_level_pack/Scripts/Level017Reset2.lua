@@ -9,9 +9,9 @@ RunHandled(
     local itemCount = util.EntityCountInArea("CCarriableItemEntity", entityDetector)
     local jammerCount = util.EntityCountInArea("CJammerItemEntity", entityDetector)
     if itemCount == jammerCount then return end
-    if playerDetector1:IsActivated() or playerDetector2:IsActivated() then
-      playerDetector1:Recharge()
-      playerDetector2:Recharge()
+    if detectors[1]:IsActivated() or detectors[2]:IsActivated() then
+      detectors[1]:Recharge()
+      detectors[2]:Recharge()
       return
     end
     util.ResetMessage()
