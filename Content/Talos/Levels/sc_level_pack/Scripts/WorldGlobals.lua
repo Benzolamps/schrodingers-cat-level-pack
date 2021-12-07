@@ -86,7 +86,7 @@ worldGlobals.CreateUtil = function ()
     --- @param flag boolean finished
     level.SetLevelRead = function (flag)
       if flag then
-        if not string.find(talosProgress:GetInventoryTetrominoes(), "NO" .. level.levelIndex) then
+        if not string.find(talosProgress:GetInventoryTetrominoes(), "NO" .. level.levelIndex .. ";") then
           player:AwardTetromino("NO" .. level.levelIndex)
         end
         talosProgress:SetVar("Level" .. level.levelIndex .. "_READ")
