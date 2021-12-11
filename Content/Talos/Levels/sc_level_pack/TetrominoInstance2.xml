@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="5">
+		<TetrominoInstances counthint="8">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
@@ -48,6 +48,36 @@
 				<Level>level23</Level>
 				<Puzzle>023</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level23=Hermit"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO24</Name>
+				<NeededMechanics>TFCR</NeededMechanics>
+				<Level>level24</Level>
+				<Puzzle>024</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level24=Portability"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO25</Name>
+				<NeededMechanics>TF</NeededMechanics>
+				<Level>level25</Level>
+				<Puzzle>025</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level25=Hesitation Ⅱ"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO26</Name>
+				<NeededMechanics>TF</NeededMechanics>
+				<Level>level26</Level>
+				<Puzzle>026</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level26=Hesitation Ⅲ"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

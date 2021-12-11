@@ -14,5 +14,5 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level13=Twilight"), "
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level14=Draw Back"), "TR", "Content/Talos/Levels/sc_level_pack/level14.wld", 14)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level15=Mitosis"), "TFCR", "Content/Talos/Levels/sc_level_pack/level15.wld", 15)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level16=Teeterboard"), "TFCR", "Content/Talos/Levels/sc_level_pack/level16.wld", 16)
-worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level17=Poppy in Tears"), "TCR", "Content/Talos/Levels/sc_level_pack/level17.wld", 17)
-worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level18=Portability"), "TFCR", "Content/Talos/Levels/sc_level_pack/level18.wld", 18)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level17=Hesitation"), "TF", "Content/Talos/Levels/sc_level_pack/level17.wld", 17)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level18=Poppy in Tears"), "TCR", "Content/Talos/Levels/sc_level_pack/level18.wld", 18)

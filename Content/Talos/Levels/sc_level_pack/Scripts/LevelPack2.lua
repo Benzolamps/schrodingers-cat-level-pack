@@ -3,3 +3,6 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level20=Split Persona
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level21=Plagued by Crises"), "FCR", "Content/Talos/Levels/sc_level_pack/level21.wld", 21)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level22=Domino"), "C", "Content/Talos/Levels/sc_level_pack/level22.wld", 22)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level23=Hermit"), "R", "Content/Talos/Levels/sc_level_pack/level23.wld", 23)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level24=Portability"), "TFCR", "Content/Talos/Levels/sc_level_pack/level24.wld", 24)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level25=Hesitation Ⅱ"), "TF", "Content/Talos/Levels/sc_level_pack/level25.wld", 25)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level26=Hesitation Ⅲ"), "TF", "Content/Talos/Levels/sc_level_pack/level26.wld", 26)

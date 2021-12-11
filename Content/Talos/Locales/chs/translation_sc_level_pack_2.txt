@@ -1,4 +1,4 @@
-10
+16
 ScLevelPack.Level19=跨越时空的密码
 ScLevelPack.Level19.WM=跨越时空的密码 [T]
 ScLevelPack.Level20=人格分裂
@@ -9,3 +9,9 @@ ScLevelPack.Level22=多米诺效应
 ScLevelPack.Level22.WM=多米诺效应 [C]
 ScLevelPack.Level23=隐者
 ScLevelPack.Level23.WM=隐者 [R]
+ScLevelPack.Level24=南水北调
+ScLevelPack.Level24.WM=南水北调 [TFCR]
+ScLevelPack.Level25=迟疑Ⅱ
+ScLevelPack.Level25.WM=迟疑Ⅱ [TF]
+ScLevelPack.Level26=迟疑Ⅲ
+ScLevelPack.Level26.WM=迟疑Ⅲ [TF]
