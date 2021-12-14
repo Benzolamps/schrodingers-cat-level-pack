@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="8">
+		<TetrominoInstances counthint="9">
 			<TetrominoInstanceData>
-				<Name>NO19</Name>
+				<Name></Name>
 				<NeededMechanics>T</NeededMechanics>
 				<Level>level19</Level>
 				<Puzzle>019</Puzzle>
@@ -13,7 +13,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO20</Name>
+				<Name></Name>
 				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level20</Level>
 				<Puzzle>020</Puzzle>
@@ -23,7 +23,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO21</Name>
+				<Name></Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level21</Level>
 				<Puzzle>021</Puzzle>
@@ -33,7 +33,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO22</Name>
+				<Name></Name>
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level22</Level>
 				<Puzzle>022</Puzzle>
@@ -43,7 +43,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO23</Name>
+				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level23</Level>
 				<Puzzle>023</Puzzle>
@@ -53,7 +53,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO24</Name>
+				<Name></Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level24</Level>
 				<Puzzle>024</Puzzle>
@@ -63,7 +63,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO25</Name>
+				<Name></Name>
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level25</Level>
 				<Puzzle>025</Puzzle>
@@ -73,11 +73,21 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO26</Name>
+				<Name></Name>
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level26</Level>
 				<Puzzle>026</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level26=Hesitation Ⅲ"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>TF</NeededMechanics>
+				<Level>level27</Level>
+				<Puzzle>027</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level27=In the Blink of an Eye"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

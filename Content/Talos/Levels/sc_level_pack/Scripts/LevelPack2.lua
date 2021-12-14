@@ -6,3 +6,4 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level23=Hermit"), "R"
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level24=Portability"), "TFCR", "Content/Talos/Levels/sc_level_pack/level24.wld", 24)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level25=Hesitation Ⅱ"), "TF", "Content/Talos/Levels/sc_level_pack/level25.wld", 25)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level26=Hesitation Ⅲ"), "TF", "Content/Talos/Levels/sc_level_pack/level26.wld", 26)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level27=In the Blink of an Eye"), "TF", "Content/Talos/Levels/sc_level_pack/level27.wld", 27)

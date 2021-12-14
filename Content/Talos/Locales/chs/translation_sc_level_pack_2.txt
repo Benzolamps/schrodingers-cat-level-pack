@@ -1,4 +1,4 @@
-16
+18
 ScLevelPack.Level19=跨越时空的密码
 ScLevelPack.Level19.WM=跨越时空的密码 [T]
 ScLevelPack.Level20=人格分裂
@@ -15,3 +15,5 @@ ScLevelPack.Level25=迟疑Ⅱ
 ScLevelPack.Level25.WM=迟疑Ⅱ [TF]
 ScLevelPack.Level26=迟疑Ⅲ
 ScLevelPack.Level26.WM=迟疑Ⅲ [TF]
+ScLevelPack.Level27=弹指一挥间
+ScLevelPack.Level27.WM=弹指一挥间 [TF]

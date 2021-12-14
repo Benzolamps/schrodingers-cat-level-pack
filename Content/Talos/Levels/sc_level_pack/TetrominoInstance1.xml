@@ -3,7 +3,7 @@
 	<TetrominoInstances>
 		<TetrominoInstances counthint="18">
 			<TetrominoInstanceData>
-				<Name>NO1</Name>
+				<Name></Name>
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level1</Level>
 				<Puzzle>001</Puzzle>
@@ -13,7 +13,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO2</Name>
+				<Name></Name>
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level2</Level>
 				<Puzzle>002</Puzzle>
@@ -23,7 +23,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO3</Name>
+				<Name></Name>
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level3</Level>
 				<Puzzle>003</Puzzle>
@@ -33,7 +33,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO4</Name>
+				<Name></Name>
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level4</Level>
 				<Puzzle>004</Puzzle>
@@ -43,17 +43,17 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO5</Name>
+				<Name></Name>
 				<NeededMechanics>FC</NeededMechanics>
 				<Level>level5</Level>
 				<Puzzle>005</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level5=Circular Dependency"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level5=Circular Dependencies"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO6</Name>
+				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level6</Level>
 				<Puzzle>006</Puzzle>
@@ -63,7 +63,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO7</Name>
+				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level7</Level>
 				<Puzzle>007</Puzzle>
@@ -73,7 +73,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO8</Name>
+				<Name></Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level8</Level>
 				<Puzzle>008</Puzzle>
@@ -83,7 +83,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO9</Name>
+				<Name></Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level9</Level>
 				<Puzzle>009</Puzzle>
@@ -93,7 +93,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO10</Name>
+				<Name></Name>
 				<NeededMechanics>CR</NeededMechanics>
 				<Level>level10</Level>
 				<Puzzle>010</Puzzle>
@@ -103,7 +103,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO11</Name>
+				<Name></Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level11</Level>
 				<Puzzle>011</Puzzle>
@@ -113,17 +113,17 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO12</Name>
+				<Name></Name>
 				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level12</Level>
 				<Puzzle>012</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level12=Apophi"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level12=Apophis"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO13</Name>
+				<Name></Name>
 				<NeededMechanics>TC</NeededMechanics>
 				<Level>level13</Level>
 				<Puzzle>013</Puzzle>
@@ -133,7 +133,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO14</Name>
+				<Name></Name>
 				<NeededMechanics>TR</NeededMechanics>
 				<Level>level14</Level>
 				<Puzzle>014</Puzzle>
@@ -143,7 +143,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO15</Name>
+				<Name></Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level15</Level>
 				<Puzzle>015</Puzzle>
@@ -153,7 +153,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO16</Name>
+				<Name></Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level16</Level>
 				<Puzzle>016</Puzzle>
@@ -163,7 +163,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO17</Name>
+				<Name></Name>
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level17</Level>
 				<Puzzle>017</Puzzle>
@@ -173,7 +173,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name>NO18</Name>
+				<Name></Name>
 				<NeededMechanics>TCR</NeededMechanics>
 				<Level>level18</Level>
 				<Puzzle>018</Puzzle>
