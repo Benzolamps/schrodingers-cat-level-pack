@@ -3,7 +3,7 @@
 	<TetrominoInstances>
 		<TetrominoInstances counthint="9">
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
 				<Level>level19</Level>
 				<Puzzle>019</Puzzle>
@@ -13,7 +13,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO20</Name>
 				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level20</Level>
 				<Puzzle>020</Puzzle>
@@ -23,7 +23,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO21</Name>
 				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level21</Level>
 				<Puzzle>021</Puzzle>
@@ -33,7 +33,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO22</Name>
 				<NeededMechanics>C</NeededMechanics>
 				<Level>level22</Level>
 				<Puzzle>022</Puzzle>
@@ -43,7 +43,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO23</Name>
 				<NeededMechanics>R</NeededMechanics>
 				<Level>level23</Level>
 				<Puzzle>023</Puzzle>
@@ -53,7 +53,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO24</Name>
 				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level24</Level>
 				<Puzzle>024</Puzzle>
@@ -63,7 +63,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO25</Name>
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level25</Level>
 				<Puzzle>025</Puzzle>
@@ -73,7 +73,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO26</Name>
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level26</Level>
 				<Puzzle>026</Puzzle>
@@ -83,7 +83,7 @@
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
-				<Name></Name>
+				<Name>NO27</Name>
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level27</Level>
 				<Puzzle>027</Puzzle>
