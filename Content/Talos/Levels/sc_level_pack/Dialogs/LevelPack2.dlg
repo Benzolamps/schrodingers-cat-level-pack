@@ -16,3 +16,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level26.WM=Hesitation Ⅲ 
 terminal when (Level26) { notext set: Level;=26; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level27.WM=In the Blink of an Eye [TF]" next: Level27 }
 terminal when (Level27) { notext set: Level;=27; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level28.WM=Voyage [FCR]" next: Level28 }
+terminal when (Level28) { notext set: Level;=28; goto: LevelSelected}
