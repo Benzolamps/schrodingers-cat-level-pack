@@ -63,29 +63,6 @@ local function PlasmaStuck(entities)
   end
 end
 
---- item fall below killer
---- @param killer table
-local function ItemFallStuck(killer)
-  if not killer then return end
-  RunAsync(function ()
-    RunHandled(
-      util.WaitTerminal,
-      OnEvery(Delay(0.1)),
-      function()
-        if util.IsTimeSwitchActive() then return end
-        local all = worldInfo:GetAllEntitiesOfClass("CCarriableItemEntity")
-        for _, entity in ipairs(all) do
-          local p = entity:GetActualPlacement()
-          if p.vy < killer:GetPlacement().vy then
-            util.ResetMessage()
-            return
-          end
-        end
-      end
-    )
-  end)
-end
-
 --- run detectors
 --- @param detectors table
 --- @param func function
@@ -102,4 +79,3 @@ RunDetectors(detectors1, PlayerStuck)
 RunDetectors(detectors2, PlayerStuckTemp)
 RunDetectors(detectors3, ItemStuck)
 PlasmaStuck(entities)
-ItemFallStuck(killer)
