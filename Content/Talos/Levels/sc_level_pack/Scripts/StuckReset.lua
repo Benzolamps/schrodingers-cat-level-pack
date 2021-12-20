@@ -44,22 +44,28 @@ end
 --- @param entities table
 local function PlasmaStuck(entities)
   if not entities then return end
-  for i = 1, #entities, 2 do
-    local detector = entities[i]
-    local plasma = entities[i + 1]
-    RunAsync(function ()
-      RunHandled(
-        WaitForever,
-        OnEvery(Event(detector.Activated)),
-        function()
-          detector:Recharge()
-          if plasma:IsOpen() then return end
-          if util.IsTimeSwitchPlaying() then return end
-          if util.ExistEntityInArea("CJammerItemEntity", detector) then return end
-          util.ResetMessage()
-        end
-      )
-    end)
+
+  local detector, plasma
+
+  for _, entity in ipairs(entities) do
+    if entity:GetClassName() == "CDetectorAreaEntity" then
+      detector = entity
+    else
+      plasma = entity
+      RunAsync(function ()
+        RunHandled(
+          WaitForever,
+          OnEvery(Event(detector.Activated)),
+          function()
+            detector:Recharge()
+            if plasma:IsOpen() then return end
+            if util.IsTimeSwitchPlaying() then return end
+            if util.ExistEntityInArea("CJammerItemEntity", detector) then return end
+            util.ResetMessage()
+          end
+        )
+      end)
+    end
   end
 end
 

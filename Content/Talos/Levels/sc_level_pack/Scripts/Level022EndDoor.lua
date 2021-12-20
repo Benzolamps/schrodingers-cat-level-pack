@@ -1,7 +1,3 @@
-local p = switch:GetPlacement()
-p.vy = -1000
-switch:SetPlacement(p)
-
 local count = 0
 
 RunHandled(

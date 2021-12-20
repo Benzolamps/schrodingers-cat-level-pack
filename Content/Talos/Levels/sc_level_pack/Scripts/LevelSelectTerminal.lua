@@ -13,13 +13,6 @@ if terminal == util.terminal then
   Wait(Delay(0.1))
   curr:Start()
   terminal:EnableASCIIAnimation(true)
-
-  -- move switch to invisible range
-  if switch ~= nil then
-    local p = switch:GetPlacement()
-    p.vy = -1000
-    switch:SetPlacement(p)
-  end
 end
 
 local finished = false
