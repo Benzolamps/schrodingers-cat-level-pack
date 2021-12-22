@@ -18,3 +18,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level27.WM=In the Blink of
 terminal when (Level27) { notext set: Level;=27; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level28.WM=Voyage [FCR]" next: Level28 }
 terminal when (Level28) { notext set: Level;=28; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level29.WM=Mutual Jamming [C]" next: Level29 }
+terminal when (Level29) { notext set: Level;=29; goto: LevelSelected}

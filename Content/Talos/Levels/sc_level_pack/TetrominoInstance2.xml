@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="10">
+		<TetrominoInstances counthint="11">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
@@ -98,6 +98,16 @@
 				<Level>level28</Level>
 				<Puzzle>028</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level28=Voyage"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO29</Name>
+				<NeededMechanics>C</NeededMechanics>
+				<Level>level29</Level>
+				<Puzzle>029</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level29=Mutual Jamming"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
