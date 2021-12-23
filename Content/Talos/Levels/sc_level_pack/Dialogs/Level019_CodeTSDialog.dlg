@@ -65,11 +65,77 @@ terminal when (Code_TS_ShowCode and Code_TS_Stage < 3) {
   goto: Code_TS_List
 }
 
-# show code read (Door C, hide 3th code)
-terminal when (Code_TS_ShowCode and Code_TS_Stage == 3) {
+# show code read (Door C, 111)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 7) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
-▓▓ %O'Code_TS_CodePrefix'█%o'Code_TS_CodeSuffix' ▓▓%w9
+▓▓ %o'Code_TS_Code' ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  goto: Code_TS_List
+}
+
+# show code read (Door C, 110)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 6) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ %O'Code_TS_CodePart_2'█%O'Code_TS_CodePart_3' ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  goto: Code_TS_List
+}
+
+# show code read (Door C, 101)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 5) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ ██%O'Code_TS_CodePart_1'%o'Code_TS_CodePart_3' ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  goto: Code_TS_List
+}
+
+# show code read (Door C, 100)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 4) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ ███%o'Code_TS_CodePart_3' ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  goto: Code_TS_List
+}
+
+# show code read (Door C, 011)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 3) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ %O'Code_TS_CodePart_2'%O'Code_TS_CodePart_1'███ ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  goto: Code_TS_List
+}
+
+# show code read (Door C, 010)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 2) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ %O'Code_TS_CodePart_2'████ ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  goto: Code_TS_List
+}
+
+# show code read (Door C, 001)
+terminal when (Code_TS_ShowCode and Code_TS_Stage == 3 and Code_TS_Parts == 1) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ ██%O'Code_TS_CodePart_1'███ ▓▓%w9
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
 
 ]]
@@ -237,11 +303,25 @@ terminal when (Code_TS_GetCode and Code_TS_Stage < 3) {
 ]]
 }
 
-# show result code (Door C, show only the first two)
-terminal when (Code_TS_GetCode and Code_TS_Stage == 3) {
+# show result code (Door C, show only the middle one)
+terminal when (Code_TS_GetCode and Code_TS_Stage == 3 and Code_TS_Part == 1) {
   text: [[TTRS:notrans=
 ▓▓▓▓▓▓▓▓▓▓▓▓%w9
-▓▓ %O'Code_TS_CodePrefix'%w9%w9%s0████ ]]
+▓▓ %w9%w9%s0██%O'Code_TS_CodePart_1'███ ]]
+}
+
+# show result code (Door C, show only the first two)
+terminal when (Code_TS_GetCode and Code_TS_Stage == 3 and Code_TS_Part == 2) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ %O'Code_TS_CodePart_2'%w9%w9%s0████ ]]
+}
+
+# show result code (Door C, show only the last three)
+terminal when (Code_TS_GetCode and Code_TS_Stage == 3 and Code_TS_Part == 3) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ %w9%w9%s0███%o'Code_TS_CodePart_3' ]]
 }
 
 # Door C connection lost

@@ -31,8 +31,40 @@ local function SetCode(code)
     print('code: ' .. code)
   end
   talosProgress:SetCode("Code_TS_Code", code)
-  talosProgress:SetCode("Code_TS_CodePrefix", code / 10000)
-  talosProgress:SetCode("Code_TS_CodeSuffix", code % 1000)
+  talosProgress:SetCode("Code_TS_CodePart_1", code / 1000 % 10)
+  talosProgress:SetCode("Code_TS_CodePart_2", code / 10000)
+  talosProgress:SetCode("Code_TS_CodePart_3", code % 1000)
+end
+
+
+--- get the code part 1 2 3
+--- @return number stage
+local function GetCodePart()
+  return talosProgress:GetCodeValue("Code_TS_Part")
+end
+
+--- set the stage
+--- @param part number stage
+local function SetCodePart(part)
+  if corIsAppEditor() then
+    print('part: ' .. part)
+  end
+  talosProgress:SetCode("Code_TS_Part", part)
+end
+
+--- get the code part 1 2 3
+--- @return number stage
+local function GetCodeParts()
+  return talosProgress:GetCodeValue("Code_TS_Parts")
+end
+
+--- set the stage
+--- @param parts number stage
+local function SetCodeParts(parts)
+  if corIsAppEditor() then
+    print('parts: ' .. parts)
+  end
+  talosProgress:SetCode("Code_TS_Parts", parts)
 end
 
 --- get the code read 0-unread 1-read 2-(unread during recording, change to read when playing started)
@@ -46,6 +78,20 @@ end
 local function SetCodeRead(codeRead)
   if corIsAppEditor() then
     print('codeRead: ' .. codeRead)
+  end
+  if codeRead ~= 1 then
+    if codeRead == 0 then
+      SetCodeParts(0)
+    elseif codeRead == 2 then
+      if (GetCodeRead() ~= 2) then
+        SetCodeParts(mthOr(GetCodeParts(), mthPow2F(GetCodePart() - 1)))
+      end
+    end
+    if GetCodePart() == 3 then
+      SetCodePart(1)
+    else
+      SetCodePart(GetCodePart() + 1)
+    end
   end
   talosProgress:SetCode("Code_TS_CodeRead", codeRead)
 end
@@ -68,12 +114,14 @@ end
 local cacheCode = 0
 SetStage(1)
 SetCode(mthRndRangeL(100000, 999999))
+SetCodePart(mthRndRangeL(1, 3))
 SetCodeRead(0)
 SetRecording(false)
 
 RunHandled(
   function()
-    Wait(All(Events(doors.Unlocked)))
+    util.WaitTerminal()
+    SetStage(4)
   end,
   -- start recording, cache current code, set recording
   OnEvery(CustomEvent("TimeSwitchRecordingStarted")),
@@ -86,10 +134,13 @@ RunHandled(
   function()
     SetRecording(false)
   end,
-  -- recoding aborted, clear the cache
+  -- recording aborted, clear the cache
   OnEvery(CustomEvent("TimeSwitchRecordingAborted")),
   function()
     cacheCode = 0
+    if GetCodeRead() == 2 then
+      SetCodeRead(0)
+    end
   end,
   -- playing started, assign cache code to current code, code read 2 to 1
   OnEvery(CustomEvent("TimeSwitchPlayingStarted")),
