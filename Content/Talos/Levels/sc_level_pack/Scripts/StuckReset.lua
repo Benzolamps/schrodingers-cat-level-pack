@@ -52,7 +52,7 @@ local function PlasmaStuck(entities)
         WaitForever,
         OnEvery(Event(detector.Activated)),
         function()
-                  detector:Recharge()
+          detector:Recharge()
           if plasma:IsOpen() then return end
           if util.IsTimeSwitchPlaying() then return end
           if util.ExistEntityInArea("CJammerItemEntity", detector) then return end
