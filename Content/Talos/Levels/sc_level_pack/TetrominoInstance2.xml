@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="11">
+		<TetrominoInstances counthint="12">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
@@ -108,6 +108,16 @@
 				<Level>level29</Level>
 				<Puzzle>029</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level29=Mutual Jamming"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO30</Name>
+				<NeededMechanics>TCS</NeededMechanics>
+				<Level>level30</Level>
+				<Puzzle>030</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level30=Companion Platform"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
