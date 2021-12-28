@@ -11,8 +11,9 @@ RunHandled(
         if detector:IsPointInArea(vItem, 0.5) then
           local pItem = item:GetPlacement()
           local pDetector = detector:GetPlacement()
-          pDetector.vy = pItem.vy
-          item:SetPlacement(pDetector)
+          pItem.vx = pDetector.vx
+          pItem.vz = pDetector.vz
+          item:SetPlacement(pItem)
         end
       end
     end
