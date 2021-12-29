@@ -10,3 +10,4 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level27=In the Blink 
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level28=Voyage"), "FCR", "Content/Talos/Levels/sc_level_pack/level28.wld", 28)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level29=Mutual Jamming"), "C", "Content/Talos/Levels/sc_level_pack/level29.wld", 29)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level30=Companion Platform"), "TCS", "Content/Talos/Levels/sc_level_pack/level30.wld", 30)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level31=Lack of Connectors"), "TR", "Content/Talos/Levels/sc_level_pack/level31.wld", 31)

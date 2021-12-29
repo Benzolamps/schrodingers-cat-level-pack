@@ -22,3 +22,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level29.WM=Mutual Jamming 
 terminal when (Level29) { notext set: Level;=29; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level30.WM=Companion Platform [TCS]" next: Level30 }
 terminal when (Level30) { notext set: Level;=30; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level31.WM=Lack of Connectors [TR]" next: Level31 }
+terminal when (Level31) { notext set: Level;=31; goto: LevelSelected}

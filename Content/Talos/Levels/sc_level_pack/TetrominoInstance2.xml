@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="12">
+		<TetrominoInstances counthint="13">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
@@ -118,6 +118,16 @@
 				<Level>level30</Level>
 				<Puzzle>030</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level30=Companion Platform"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO31</Name>
+				<NeededMechanics>TR</NeededMechanics>
+				<Level>level31</Level>
+				<Puzzle>031</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level31=Lack of Connectors"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
