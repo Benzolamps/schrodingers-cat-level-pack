@@ -5,14 +5,14 @@ RunHandled(
   OnEvery(Any(Events(pressures.Pressed))),
   function()
     count = count + 1
-    if count == 3 then
+    if count == #pressures then
       switch:Activate()
     end
   end,
   OnEvery(Any(Events(pressures.Released))),
   function()
     count = count - 1
-    if count == 2 then
+    if count == #pressures - 1 then
       switch:Deactivate()
     end
   end
