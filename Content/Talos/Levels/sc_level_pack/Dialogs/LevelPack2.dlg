@@ -24,3 +24,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level30.WM=Companion Platf
 terminal when (Level30) { notext set: Level;=30; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level31.WM=Lack of Connectors [TR]" next: Level31 }
 terminal when (Level31) { notext set: Level;=31; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level32.WM=Fitful Wind [FCR]" next: Level32 }
+terminal when (Level32) { notext set: Level;=32; goto: LevelSelected}
