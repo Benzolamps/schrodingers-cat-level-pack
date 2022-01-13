@@ -29,12 +29,13 @@ end
 --- item stuck
 --- @param detector table
 local function ItemStuck(detector)
+  local count = util.EntityCountInArea("CCarriableItemEntity", detector)
   RunHandled(
     util.WaitTerminal,
     OnEvery(Delay(0.1)),
     function()
       if util.IsTimeSwitchActive() then return end
-      if not util.ExistEntityInArea("CCarriableItemEntity", detector) then return end
+      if util.EntityCountInArea("CCarriableItemEntity", detector) <= count then return end
       util.ResetMessage()
     end
   )
