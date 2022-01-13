@@ -25,5 +25,5 @@ ScLevelPack.Level30=爱心同伴平台
 ScLevelPack.Level30.WM=爱心同伴平台 [TCS]
 ScLevelPack.Level31=连接器不够用了
 ScLevelPack.Level31.WM=连接器不够用了 [TR]
-ScLevelPack.Level32=阵风
-ScLevelPack.Level32.WM=阵风 [FCR]
+ScLevelPack.Level32=镜之边缘
+ScLevelPack.Level32.WM=镜之边缘 [FCR]
