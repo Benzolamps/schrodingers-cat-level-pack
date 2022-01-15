@@ -41,6 +41,22 @@ local function ItemStuck(detector)
   )
 end
 
+--- item stuck
+--- @param detector table
+local function ItemForgotStuck(detector)
+  local count = util.EntityCountInArea("CCarriableItemEntity", detector)
+  RunHandled(
+    util.WaitTerminal,
+    OnEvery(Delay(0.1)),
+    function()
+      if util.IsTimeSwitchActive() then return end
+      if util.IsPlayerInArea(detector) then return end
+      if util.EntityCountInArea("CCarriableItemEntity", detector) <= count then return end
+      util.ResetMessage()
+    end
+  )
+end
+
 --- plasma closed, no jammer, player stuck
 --- @param entities table
 local function PlasmaStuck(entities)
@@ -79,4 +95,5 @@ end
 RunDetectors(detectors1, PlayerStuck)
 RunDetectors(detectors2, PlayerStuckTemp)
 RunDetectors(detectors3, ItemStuck)
+RunDetectors(detectors4, ItemForgotStuck)
 PlasmaStuck(entities)

@@ -1,4 +1,4 @@
-28
+30
 ScLevelPack.Level19=跨越时空的密码
 ScLevelPack.Level19.WM=跨越时空的密码 [T]
 ScLevelPack.Level20=人格分裂
@@ -18,7 +18,7 @@ ScLevelPack.Level26.WM=迟疑Ⅲ [TF]
 ScLevelPack.Level27=弹指一挥间
 ScLevelPack.Level27.WM=弹指一挥间 [TF]
 ScLevelPack.Level28=乘风破浪
-ScLevelPack.Level28.WM=乘风破浪 [FCR]
+ScLevelPack.Level28.WM=乘风破浪 [CR]
 ScLevelPack.Level29=相互干扰
 ScLevelPack.Level29.WM=相互干扰 [C]
 ScLevelPack.Level30=爱心同伴平台
@@ -27,3 +27,5 @@ ScLevelPack.Level31=连接器不够用了
 ScLevelPack.Level31.WM=连接器不够用了 [TR]
 ScLevelPack.Level32=镜之边缘
 ScLevelPack.Level32.WM=镜之边缘 [FCR]
+ScLevelPack.Level33=镇魂曲
+ScLevelPack.Level33.WM=镇魂曲 [TS]
