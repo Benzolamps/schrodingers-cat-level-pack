@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="15">
+		<TetrominoInstances counthint="16">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
 				<NeededMechanics>T</NeededMechanics>
@@ -148,6 +148,16 @@
 				<Level>level33</Level>
 				<Puzzle>033</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level33=Requiem"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO34</Name>
+				<NeededMechanics>TFRS</NeededMechanics>
+				<Level>level34</Level>
+				<Puzzle>034</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level34=Beyond the Ditch"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

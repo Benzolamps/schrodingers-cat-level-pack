@@ -28,3 +28,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level32.WM=Mirror's Edge [
 terminal when (Level32) { notext set: Level;=32; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level33.WM=Requiem [TS]" next: Level33 }
 terminal when (Level33) { notext set: Level;=33; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level34.WM=Beyond the Ditch [TFRS]" next: Level34 }
+terminal when (Level34) { notext set: Level;=34; goto: LevelSelected}

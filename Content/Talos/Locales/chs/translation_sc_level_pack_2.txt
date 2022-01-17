@@ -1,4 +1,4 @@
-30
+32
 ScLevelPack.Level19=跨越时空的密码
 ScLevelPack.Level19.WM=跨越时空的密码 [T]
 ScLevelPack.Level20=人格分裂
@@ -29,3 +29,5 @@ ScLevelPack.Level32=镜之边缘
 ScLevelPack.Level32.WM=镜之边缘 [FCR]
 ScLevelPack.Level33=镇魂曲
 ScLevelPack.Level33.WM=镇魂曲 [TS]
+ScLevelPack.Level34=越过鸿沟
+ScLevelPack.Level34.WM=越过鸿沟 [TFRS]

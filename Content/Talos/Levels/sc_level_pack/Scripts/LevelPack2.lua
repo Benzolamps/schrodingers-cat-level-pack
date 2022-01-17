@@ -13,3 +13,4 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level30=Companion Pla
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level31=Lack of Connectors"), "TR", "Content/Talos/Levels/sc_level_pack/level31.wld", 31)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level32=Mirror's Edge"), "FCR", "Content/Talos/Levels/sc_level_pack/level32.wld", 32)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level33=Requiem"), "TS", "Content/Talos/Levels/sc_level_pack/level33.wld", 33)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level34=Beyond the Ditch"), "TFRS", "Content/Talos/Levels/sc_level_pack/level34.wld", 34)
