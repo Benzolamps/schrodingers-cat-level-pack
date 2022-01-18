@@ -36,7 +36,7 @@ RunHandled(
           return
         end
       else
-        if not jammerIn1 and not jammerIn2 and not jammerIn3 then
+        if not (door2Open and (jammerIn2 or jammerIn3)) then
           util.ResetMessage()
           return
         end
