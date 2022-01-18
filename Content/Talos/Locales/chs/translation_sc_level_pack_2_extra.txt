@@ -16,4 +16,6 @@ ScLevelPack.CodeTS.HackQuery=\n正在查询.%w9.%w9.%w9.%w9.%w9\n完成。%w9\n
 ScLevelPack.CodeTS.ConnectionLost=※接断开！%w9\n
 ScLevelPack.CodeTS.ResetFailed=\n警告：检测到非法用户试图侵入系统！%w9\n正在重置密码.%w3.%w3.%w3.%w3.%w3%w9%s0\n失败。%w9%e6\n\n
 ScLevelPack.CodeTS.ResetFinish=\n警告：检测到非法用户试图侵入系统！%w9\n正在重置密码.%w3.%w3.%w3.%w3.%w3%w9\n完成。%w9%e6\n\n
-ScLevelPack.SplitHint=不要忘记去踩按钮哦！
+ScLevelPack.SplitHint=不要忘记去踩压力板哦！
+ScLevelPack.EnhancedPlatformHint1=我把踏板平台给增(mó)强(gǎi)了，它现在可以放置到盒子上、压力板上，以及记录状态的踏板平台上
+ScLevelPack.EnhancedPlatformHint2=请不要介意它的指示器是一个风扇。emm。。。

@@ -4,20 +4,20 @@
 		<TetrominoInstances counthint="16">
 			<TetrominoInstanceData>
 				<Name>NO19</Name>
-				<NeededMechanics>T</NeededMechanics>
+				<NeededMechanics>C</NeededMechanics>
 				<Level>level19</Level>
 				<Puzzle>019</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level19=Code across Time and Space"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level19=Domino"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO20</Name>
-				<NeededMechanics>TFC</NeededMechanics>
+				<NeededMechanics>C</NeededMechanics>
 				<Level>level20</Level>
 				<Puzzle>020</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level20=Split Personality"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level20=Mutual Jamming"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -34,10 +34,10 @@
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO22</Name>
-				<NeededMechanics>C</NeededMechanics>
+				<NeededMechanics>CR</NeededMechanics>
 				<Level>level22</Level>
 				<Puzzle>022</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level22=Domino"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level22=Voyage"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -54,20 +54,20 @@
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO24</Name>
-				<NeededMechanics>TFCR</NeededMechanics>
+				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level24</Level>
 				<Puzzle>024</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level24=Portability"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level24=Mirror's Edge"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO25</Name>
-				<NeededMechanics>TF</NeededMechanics>
+				<NeededMechanics>T</NeededMechanics>
 				<Level>level25</Level>
 				<Puzzle>025</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level25=Hesitation Ⅱ"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level25=Code across Time and Space"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -77,7 +77,7 @@
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level26</Level>
 				<Puzzle>026</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level26=Hesitation Ⅲ"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level26=In the Blink of an Eye"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -87,57 +87,57 @@
 				<NeededMechanics>TF</NeededMechanics>
 				<Level>level27</Level>
 				<Puzzle>027</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level27=In the Blink of an Eye"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level27=Hesitation Ⅱ"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO28</Name>
-				<NeededMechanics>CR</NeededMechanics>
+				<NeededMechanics>TFC</NeededMechanics>
 				<Level>level28</Level>
 				<Puzzle>028</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level28=Voyage"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level28=Split Personality"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO29</Name>
-				<NeededMechanics>C</NeededMechanics>
+				<NeededMechanics>TF</NeededMechanics>
 				<Level>level29</Level>
 				<Puzzle>029</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level29=Mutual Jamming"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level29=Hesitation Ⅲ"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO30</Name>
-				<NeededMechanics>TCS</NeededMechanics>
+				<NeededMechanics>TR</NeededMechanics>
 				<Level>level30</Level>
 				<Puzzle>030</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level30=Companion Platform"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level30=Lack of Connectors"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO31</Name>
-				<NeededMechanics>TR</NeededMechanics>
+				<NeededMechanics>TFCR</NeededMechanics>
 				<Level>level31</Level>
 				<Puzzle>031</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level31=Lack of Connectors"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level31=Portability"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO32</Name>
-				<NeededMechanics>FCR</NeededMechanics>
+				<NeededMechanics>TCS</NeededMechanics>
 				<Level>level32</Level>
 				<Puzzle>032</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level32=Mirror's Edge"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level32=Companion Platform"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
