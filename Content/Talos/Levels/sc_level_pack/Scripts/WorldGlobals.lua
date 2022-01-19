@@ -79,7 +79,7 @@ worldGlobals.CreateUtil = function ()
     --- is the level finished
     --- @return boolean finished
     level.IsLevelRead = function ()
-      return talosProgress:GetVar("Level" .. level.levelIndex .. "_READ")
+      return talosProgress:IsVarSet("Level" .. level.levelIndex .. "_READ")
     end
 
     --- set the level finished
