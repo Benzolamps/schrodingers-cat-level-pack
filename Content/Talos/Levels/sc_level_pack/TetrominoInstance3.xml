@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SeriousEngineFile Loader="CXMLResourceFileType">
+	<TetrominoInstances>
+		<TetrominoInstances counthint="1">
+			<TetrominoInstanceData>
+				<Name></Name>
+				<NeededMechanics>C</NeededMechanics>
+				<Level>level35</Level>
+				<Puzzle>035</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level35=Selflessness"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+		</TetrominoInstances>
+	</TetrominoInstances>
+</SeriousEngineFile>

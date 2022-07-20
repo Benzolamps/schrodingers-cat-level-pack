@@ -1,0 +1,2 @@
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level35.WM=Selflessness [C]" next: Level35 }
+terminal when (Level35) { notext set: Level;=35; goto: LevelSelected}
