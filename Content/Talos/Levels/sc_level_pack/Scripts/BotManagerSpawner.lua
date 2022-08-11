@@ -9,5 +9,24 @@ for _, marker in ipairs(markers) do
   elseif string.find(marker:GetName(), "BlackGhost") == 1 then
     player = botManager:SpawnGhostNPC("Black Ghost", marker)
   end
-  player:SetCharacterName('')
+  player:SetCharacterName('Test Bot ' .. string.sub(marker:GetName(), 11))
+  RunAsync(function ()
+    local carriedItem
+    RunHandled(
+      function ()
+        Wait(Event(player.Died))
+        if carriedItem ~= nil then
+          carriedItem:SetPlacement(player:GetPlacement())
+        end
+      end,
+      OnEvery(Event(player.ObjectGrabbed)),
+      function ()
+        carriedItem = player:GetCarriedItem()
+      end,
+      OnEvery(Event(player.ObjectDropped)),
+      function ()
+        carriedItem = nil
+      end
+    )
+  end)
 end

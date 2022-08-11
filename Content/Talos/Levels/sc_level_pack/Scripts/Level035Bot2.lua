@@ -1,8 +1,2 @@
-jammer2:Hide()
 Wait(Event(detector.Activated))
 switch:Activate()
-Wait(Event(mine.Died))
-local p = jammer1:GetPlacement()
-jammer1:Hide()
-jammer2:SetPlacement(p)
-jammer2:Unhide()

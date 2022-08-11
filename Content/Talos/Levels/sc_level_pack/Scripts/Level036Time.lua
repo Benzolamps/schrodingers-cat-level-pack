@@ -1,6 +1,8 @@
 RunHandled(
   function ()
     Wait(Event(key.Picked))
+    switch1:Deactivate()
+    switch2:Deactivate()
   end,
   OnEvery(CustomEvent("TimeSwitchRecordingStarted")),
   function()
@@ -19,6 +21,3 @@ RunHandled(
     switch2:Deactivate()
   end
 )
-
-switch1:Deactivate()
-switch2:Deactivate()
