@@ -9,6 +9,10 @@ RunHandled(
   function()
     if util.IsTimeSwitchRecording() then
       if lastState ~= 1 then
+        if lastState == 2 then
+          -- playing ended
+          SignalEvent("TimeSwitchPlayingEnded")
+        end
         -- recording started
         SignalEvent("TimeSwitchRecordingStarted")
         lastState = 1

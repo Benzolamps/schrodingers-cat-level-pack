@@ -1,3 +1,5 @@
-2
-ScLevelPack.Level35=无私
-ScLevelPack.Level35.WM=无私 [C]
+4
+ScLevelPack.Level35=牺牲
+ScLevelPack.Level35.WM=牺牲 [C]
+ScLevelPack.Level36=27°59′17″N/86°55′31″E
+ScLevelPack.Level36.WM=27°59′17″N/86°55′31″E [TCS]
