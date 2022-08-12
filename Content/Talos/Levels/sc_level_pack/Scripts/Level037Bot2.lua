@@ -10,7 +10,7 @@ RunHandled(
     end
     local vCube1 = cube1:GetActualPlacement()
     local vCube2 = cube2:GetActualPlacement()
-    if (not cube1Deployed) and detector:IsPointInArea(vCube1:GetVect(), 0.5) then
+    if not cube1Deployed and detector:IsPointInArea(vCube1:GetVect(), 0.5) then
       cube1Deployed = true
       switch2:Activate()
       switch1:Activate()
@@ -24,7 +24,7 @@ RunHandled(
       end
       return
     end
-    if (not cube2Deployed) and detector:IsPointInArea(vCube2:GetVect(), 0.5) then
+    if not cube2Deployed and detector:IsPointInArea(vCube2:GetVect(), 0.5) then
       cube2Deployed = true
       switch2:Deactivate()
       switch1:Activate()
