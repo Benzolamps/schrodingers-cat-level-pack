@@ -4,6 +4,11 @@ RunHandled(
     switch1:Deactivate()
     switch2:Deactivate()
   end,
+  On(Event(platform.Picked)),
+  function ()
+    platform:SetPlacement(marker:GetPlacement())
+    platform:Unhide()
+  end,
   OnEvery(CustomEvent("TimeSwitchRecordingStarted")),
   function()
     switch1:Activate()
