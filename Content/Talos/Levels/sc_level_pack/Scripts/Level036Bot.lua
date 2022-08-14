@@ -26,3 +26,6 @@ RunHandled(
     switch2:Deactivate()
   end
 )
+
+Wait(Event(door.Unlocked))
+barrier:Disable()
