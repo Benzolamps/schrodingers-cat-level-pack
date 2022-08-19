@@ -1,7 +1,11 @@
-6
+10
 ScLevelPack.Level35=牺牲
 ScLevelPack.Level35.WM=牺牲 [C]
 ScLevelPack.Level36=尤克里里
 ScLevelPack.Level36.WM=尤克里里 [TCS]
 ScLevelPack.Level37=相濡以沫
 ScLevelPack.Level37.WM=相濡以沫 [CS]
+ScLevelPack.Level38=小偷
+ScLevelPack.Level38.WM=小偷 [FC]
+ScLevelPack.Level39=二二得四
+ScLevelPack.Level39.WM=二二得四 [T]

@@ -4,3 +4,7 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level36.WM=Ukulele [TCS]" 
 terminal when (Level36) { notext set: Level;=36; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level37.WM=Mutual Support [CS]" next: Level37 }
 terminal when (Level37) { notext set: Level;=37; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level38.WM=Thief [FC]" next: Level38 }
+terminal when (Level38) { notext set: Level;=38; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level39.WM=2×2 [T]" next: Level39 }
+terminal when (Level39) { notext set: Level;=39; goto: LevelSelected}

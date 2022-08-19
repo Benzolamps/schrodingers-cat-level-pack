@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="3">
+		<TetrominoInstances counthint="5">
 			<TetrominoInstanceData>
 				<Name>NO35</Name>
 				<NeededMechanics>C</NeededMechanics>
@@ -28,6 +28,26 @@
 				<Level>level37</Level>
 				<Puzzle>037</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level37=Mutual Support"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO38</Name>
+				<NeededMechanics>FC</NeededMechanics>
+				<Level>level38</Level>
+				<Puzzle>038</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level38=Thief"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO39</Name>
+				<NeededMechanics>T</NeededMechanics>
+				<Level>level39</Level>
+				<Puzzle>039</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level39=2×2"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
