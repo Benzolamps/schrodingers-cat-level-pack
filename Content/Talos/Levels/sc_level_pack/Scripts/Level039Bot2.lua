@@ -1,6 +1,6 @@
 local util = worldGlobals.CreateUtil()
 
-local jammerGrabed = false
+local jammerGrabbed = false
 local jammerBack = false
 
 RunHandled(
@@ -16,7 +16,7 @@ RunHandled(
   OnEvery(Event(util.player.ObjectGrabbed)),
   function()
     if not jammerBack then
-      jammerGrabed = true
+      jammerGrabbed = true
 
       switch:Activate()
     end
@@ -24,7 +24,7 @@ RunHandled(
   OnEvery(Event(util.player.ObjectDropped)),
   function()
     if not jammerBack then
-      jammerGrabed = false
+      jammerGrabbed = false
       switch:Deactivate()
     end
   end
