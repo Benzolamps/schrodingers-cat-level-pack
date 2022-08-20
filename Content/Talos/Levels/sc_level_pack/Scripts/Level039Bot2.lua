@@ -7,7 +7,7 @@ RunHandled(
   WaitForever,
   OnEvery(Event(detector.Activated)),
   function()
-    if jammerGrabed then
+    if util.ExistEntityInArea("CJammerItemEntity", detector) then
       jammerBack = true
     else
       detector:Recharge()
@@ -25,7 +25,6 @@ RunHandled(
   function()
     if not jammerBack then
       jammerGrabed = false
-
       switch:Deactivate()
     end
   end
