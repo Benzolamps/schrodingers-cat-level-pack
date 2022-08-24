@@ -17,7 +17,6 @@ RunHandled(
   function()
     if not jammerBack then
       jammerGrabbed = true
-
       switch:Activate()
     end
   end,
