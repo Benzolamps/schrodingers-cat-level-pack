@@ -24,7 +24,7 @@ terminal when (Menu or MessageBoardInterface_Off) {
   next: MenuOptions
 }
 
-# shoe menu options
+# show menu options
 player when (MenuOptions) {
   options: {
     "TTRS:ScLevelPack.NextLevel=Next Level" next: NextLevel

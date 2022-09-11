@@ -2,4 +2,5 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level35=Sacrifice"), 
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level36=Ukulele"), "TCS", "Content/Talos/Levels/sc_level_pack/level36.wld", 36)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level37=Mutual Support"), "CS", "Content/Talos/Levels/sc_level_pack/level37.wld", 37)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level38=Thief"), "FC", "Content/Talos/Levels/sc_level_pack/level38.wld", 38)
-worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level39=2×2"), "T", "Content/Talos/Levels/sc_level_pack/level39.wld", 39)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level39=2*2"), "T", "Content/Talos/Levels/sc_level_pack/level39.wld", 39)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level40=FACT(6)*4"), "FR", "Content/Talos/Levels/sc_level_pack/level40.wld", 40)

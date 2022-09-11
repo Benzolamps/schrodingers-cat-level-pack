@@ -1,0 +1,200 @@
+# string constants
+string Code_AC_DoorAString "TTRS:ScLevelPack.CodeAC.DoorA=Door A"
+string Code_AC_DoorBString "TTRS:ScLevelPack.CodeAC.DoorB=Door B"
+string Code_AC_DoorCString "TTRS:ScLevelPack.CodeAC.DoorC=Door C"
+string Code_AC_DoorDString "TTRS:ScLevelPack.CodeAC.DoorD=Door D"
+string Code_AC_DoorAHint "TTRS:ScLevelPack.CodeAC.DoorAHint=From fast to slow   "
+string Code_AC_DoorBHint "TTRS:ScLevelPack.CodeAC.DoorBHint=From high to low    "
+string Code_AC_DoorCHint "TTRS:ScLevelPack.CodeAC.DoorCHint=From big to small   "
+string Code_AC_DoorDHint "TTRS:ScLevelPack.CodeAC.DoorDHint=From present to past"
+
+string Code_AC_DoorUnlockedString [[TTRS:ScLevelPack.CodeAC.DoorUnlocked= has been unlocked.]]
+
+string Code_AC_UnlockDoor "TTRS:ScLevelPack.CodeAC.UnlockDoor=Unlock "
+
+string Code_AC_DoorEnterCodeString [[TTRS:ScLevelPack.CodeAC.DoorEnterCode= is protected with a code.%w9
+Please enter the code:%w9]]
+
+# add options to menu
+player when (MenuOptions and not (Code_AC_DoorA_Unlocked and Code_AC_DoorB_Unlocked and Code_AC_DoorC_Unlocked and Code_AC_DoorD_Unlocked)) {
+  options: {
+    "TTRS:notrans=open device_manager.exe"
+    short: "TTRS:ScLevelPack.CodeAC.DeviceManager=[Device Manager]"
+    next: Code_AC_List
+  }
+}
+
+# show new message
+terminal when (Code_AC_List and not Code_AC_Message_Read) {
+  text: [[TTRS:ScLevelPack.CodeAC.NewMessage=
+You received a new email.
+
+]]
+}
+
+# show new message
+terminal when (Code_AC_List and not Code_AC_Message_Read) {
+  prompt: "%t'CommonPrompt'"
+  next: Code_AC_NewMessageOptions
+}
+
+player when (Code_AC_NewMessageOptions) {
+  options: {
+    "TTRS:notrans=open email.exe"
+    short: "TTRS:ScLevelPack.CodeAC.OpenEmail=Open"
+    next: Code_AC_ShowMessage
+  }
+}
+
+# show unlock door options
+terminal when (Code_AC_List and Code_AC_Message_Read) {
+   prompt: "%t'CommonPrompt'"
+   next: Code_AC_UnlockDoorOptions
+}
+
+terminal when (Code_AC_ShowMessage) {
+  text: [[TTRS:notrans=
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%w9
+▓▓ A. %t'Code_AC_DoorAHint' ▓▓%w9
+▓▓ B. %t'Code_AC_DoorBHint' ▓▓%w9
+▓▓ C. %t'Code_AC_DoorCHint' ▓▓%w9
+▓▓ D. %t'Code_AC_DoorDHint' ▓▓%w9
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%w9
+
+]]
+  set: Code_AC_Message_Read
+  goto: Code_AC_List
+}
+
+# show options
+player when (Code_AC_UnlockDoorOptions) {
+  options: {
+    "%t'Code_AC_UnlockDoor'%t'Code_AC_DoorAString'" next: Code_AC_UnlockA
+    "%t'Code_AC_UnlockDoor'%t'Code_AC_DoorBString'" next: Code_AC_UnlockB
+    "%t'Code_AC_UnlockDoor'%t'Code_AC_DoorCString'" next: Code_AC_UnlockC
+    "%t'Code_AC_UnlockDoor'%t'Code_AC_DoorDString'" next: Code_AC_UnlockD
+    "TTRS:notrans=open email.exe"
+    short: "TTRS:ScLevelPack.CodeAC.OpenEmailAgain=Show Email"
+    next: Code_AC_ShowMessage
+    "TTRS:ScLevelPack.Exit=Exit" next: Menu
+  }
+}
+
+# Door A unlocked
+terminal when (Code_AC_UnlockA and Code_AC_DoorA_Unlocked) {
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorAString'%t'Code_AC_DoorUnlockedString'
+
+]]
+  goto: Code_AC_List
+}
+
+# Door B unlocked
+terminal when (Code_AC_UnlockB and Code_AC_DoorB_Unlocked) {
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorBString'%t'Code_AC_DoorUnlockedString'
+
+]]
+  goto: Code_AC_List
+}
+
+# Door C unlocked
+terminal when (Code_AC_UnlockC and Code_AC_DoorC_Unlocked) {
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorCString'%t'Code_AC_DoorUnlockedString'
+
+]]
+  goto: Code_AC_List
+}
+
+# Door D unlocked
+terminal when (Code_AC_UnlockD and Code_AC_DoorD_Unlocked) {
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorDString'%t'Code_AC_DoorUnlockedString'
+
+]]
+  goto: Code_AC_List
+}
+
+# Door A enter code
+terminal when (Code_AC_UnlockA and not Code_AC_DoorA_Unlocked) {
+  setlocal: Code_AC_Current;=1;
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorAString'%t'Code_AC_DoorEnterCodeString'%e6
+
+]]
+}
+
+# Door B enter code
+terminal when (Code_AC_UnlockB and not Code_AC_DoorB_Unlocked) {
+  setlocal: Code_AC_Current;=2;
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorBString'%t'Code_AC_DoorEnterCodeString'%e6
+
+]]
+}
+
+# Door C enter code
+terminal when (Code_AC_UnlockC and not Code_AC_DoorC_Unlocked) {
+  setlocal: Code_AC_Current;=3;
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorCString'%t'Code_AC_DoorEnterCodeString'%e6
+
+]]
+}
+
+# Door D enter code
+terminal when (Code_AC_UnlockD and not Code_AC_DoorD_Unlocked) {
+  setlocal: Code_AC_Current;=4;
+  text: [[TTRS:notrans=
+%t'Code_AC_DoorDString'%t'Code_AC_DoorEnterCodeString'%e6
+
+]]
+}
+
+# start enter code
+terminal when (Code_AC_UnlockA or Code_AC_UnlockB or Code_AC_UnlockC or Code_AC_UnlockD) {
+  prompt: "%t'CommonPrompt'"
+  goto: Code_AC_EnterCode
+}
+
+# enter code input area
+terminal when (Code_AC_EnterCode) {
+  enter_code: Code_AC_Code Code_AC_CodeOK Code_AC_CodeWrong
+}
+
+# time switch not recording, code accepted
+terminal when (Code_AC_CodeOK) {
+  text: [[TTRS:ScLevelPack.CodeAC.CodeUnlocked=
+Code accepted.%w9
+Unlocking.%w3.%w3.%w3.%w3.%w3%e7
+Done.%w9
+
+]]
+}
+
+# after code accepted exit
+terminal when (Code_AC_CodeOK) {
+  prompt: "%t'CommonPrompt'"
+  options: { "TTRS:ScLevelPack.Exit=Exit" next: Exit }
+}
+
+# code incorrect show attempts
+terminal when (Code_AC_CodeWrong) {
+  text: [[TTRS:ScLevelPack.CodeAC.CodeAttempts=
+Code incorrect!%s0%w9
+Try Again.%w9
+Please enter the code:%w9
+
+]]
+}
+
+
+# retry enter code
+terminal when (Code_AC_CodeWrong) {
+  prompt: "%t'CommonPrompt'"
+  goto: Code_AC_EnterCode
+}
+
+# load main dialog
+include "Content/Talos/Levels/sc_level_pack/Dialogs/MainDialog.dlg"
