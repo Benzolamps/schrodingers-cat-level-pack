@@ -27,7 +27,7 @@ player when (MenuOptions and not (Code_AC_DoorA_Unlocked and Code_AC_DoorB_Unloc
 # show new message
 terminal when (Code_AC_List and not Code_AC_Message_Read) {
   text: [[TTRS:ScLevelPack.CodeAC.NewMessage=
-You received a new email.
+You received a new email.%s0%w9
 
 ]]
 }

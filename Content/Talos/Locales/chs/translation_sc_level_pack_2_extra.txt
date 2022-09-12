@@ -1,4 +1,4 @@
-18
+19
 ScLevelPack.CodeTS.DoorA=A门
 ScLevelPack.CodeTS.DoorB=B门
 ScLevelPack.CodeTS.DoorC=C门
