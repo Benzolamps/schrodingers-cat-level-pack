@@ -10,7 +10,9 @@ RunHandled(
   end,
   OnEvery(Event(pressure2.Pressed)),
   function()
-    switch:Activate()
+    if pressure1:IsPressed() then
+      switch:Activate()
+    end
   end,
   OnEvery(Any(Event(pressure1.Released), Event(pressure2.Released))),
   function()
