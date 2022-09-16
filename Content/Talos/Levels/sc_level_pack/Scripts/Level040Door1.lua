@@ -1,0 +1,8 @@
+Wait(Event(detector.Activated))
+Wait(Delay(1))
+ArrangeStarted:PlayOnce()
+Wait(Delay(2))
+ArrangerSolved:PlayOnce()
+Wait(Delay(0.5))
+DoorOpened:PlayOnce()
+door:Open()

@@ -1,3 +1,5 @@
+local util = worldGlobals.CreateUtil()
+
 RunHandled(
   WaitForever,
   OnEvery(Event(pressure1.Pressed)),

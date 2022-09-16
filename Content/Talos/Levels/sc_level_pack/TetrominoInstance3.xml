@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="6">
+		<TetrominoInstances counthint="8">
 			<TetrominoInstanceData>
 				<Name>NO35</Name>
 				<NeededMechanics>C</NeededMechanics>
@@ -47,7 +47,7 @@
 				<NeededMechanics>T</NeededMechanics>
 				<Level>level39</Level>
 				<Puzzle>039</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level39=2*2"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level39=Oxozone"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -57,7 +57,27 @@
 				<NeededMechanics>FR</NeededMechanics>
 				<Level>level40</Level>
 				<Puzzle>040</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level40=FACT(6)*4"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level40=Shuffle(1,2,3,4,5,6)"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO41</Name>
+				<NeededMechanics>R</NeededMechanics>
+				<Level>level41</Level>
+				<Puzzle>041</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level41=Reflective Moments"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO42</Name>
+				<NeededMechanics>TF</NeededMechanics>
+				<Level>level42</Level>
+				<Puzzle>042</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level42=Hesitation Ⅳ"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

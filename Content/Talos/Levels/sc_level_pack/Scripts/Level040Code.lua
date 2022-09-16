@@ -36,7 +36,7 @@ end)()
     for j = 1, 6 do
       if
         fans[i]:GetName() == "Fan_" .. j
-        and worldInfo:GetDistance(fans[i], markersB[listB[j]]) == 16
+        and worldInfo:GetDistance(fans[i], markersB[listB[j]]) <= 16
       then
         shouldDelete = false
         break

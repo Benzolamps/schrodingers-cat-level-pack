@@ -1,4 +1,4 @@
-12
+16
 ScLevelPack.Level35=牺牲
 ScLevelPack.Level35.WM=牺牲 [C]
 ScLevelPack.Level36=尤克里里
@@ -7,7 +7,11 @@ ScLevelPack.Level37=相濡以沫
 ScLevelPack.Level37.WM=相濡以沫 [CS]
 ScLevelPack.Level38=小偷
 ScLevelPack.Level38.WM=小偷 [FC]
-ScLevelPack.Level39=二二得四
-ScLevelPack.Level39.WM=二二得四 [T]
-ScLevelPack.Level40=FACT(6)*4
-ScLevelPack.Level40.WM=FACT(6)*4 [FR]
+ScLevelPack.Level39=四聚氧
+ScLevelPack.Level39.WM=四聚氧 [T]
+ScLevelPack.Level40=Shuffle(1,2,3,4,5,6)
+ScLevelPack.Level40.WM=Shuffle(1,2,3,4,5,6) [FR]
+ScLevelPack.Level41=反射时刻
+ScLevelPack.Level41.WM=反射时刻 [R]
+ScLevelPack.Level42=迟疑Ⅳ
+ScLevelPack.Level42.WM=迟疑Ⅳ [TF]
