@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="8">
+		<TetrominoInstances counthint="9">
 			<TetrominoInstanceData>
 				<Name>NO35</Name>
 				<NeededMechanics>C</NeededMechanics>
@@ -57,7 +57,7 @@
 				<NeededMechanics>FR</NeededMechanics>
 				<Level>level40</Level>
 				<Puzzle>040</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level40=Shuffle(1,2,3,4,5,6)"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level40=Shuffle(123456)"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -78,6 +78,16 @@
 				<Level>level42</Level>
 				<Puzzle>042</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level42=Hesitation Ⅳ"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO43</Name>
+				<NeededMechanics>F</NeededMechanics>
+				<Level>level43</Level>
+				<Puzzle>043</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level43=Dance of Wind"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
