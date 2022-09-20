@@ -18,7 +18,6 @@ for i = 1, 3 do
   end
 end
 
-
 for i = 1, 3 do
   if itemIndex1 == i then
     switchs[i]:Activate()

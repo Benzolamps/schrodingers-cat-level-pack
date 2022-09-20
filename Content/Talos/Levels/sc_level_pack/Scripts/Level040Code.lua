@@ -120,13 +120,13 @@ end)()
 
   RunHandled(
     WaitForever,
-  -- reset the code
+    -- set the code
     OnEvery(CustomEvent(terminal, "TerminalEvent_6")),
     function()
       local index = talosProgress:GetCodeValue("Code_AC_Current")
       talosProgress:SetCode("Code_AC_Code", codes[index])
     end,
-  -- code accepted
+    -- code accepted
     OnEvery(CustomEvent(terminal, "TerminalEvent_7")),
     function()
       local index = talosProgress:GetCodeValue("Code_AC_Current")
