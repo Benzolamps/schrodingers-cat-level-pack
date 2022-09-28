@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="9">
+		<TetrominoInstances counthint="10">
 			<TetrominoInstanceData>
 				<Name>NO35</Name>
 				<NeededMechanics>C</NeededMechanics>
@@ -88,6 +88,16 @@
 				<Level>level43</Level>
 				<Puzzle>043</Puzzle>
 				<PuzzleTitle>"TTRS:ScLevelPack.Level43=Dance of Wind"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO44</Name>
+				<NeededMechanics>R</NeededMechanics>
+				<Level>level44</Level>
+				<Puzzle>044</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level44=Traffic Light"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>

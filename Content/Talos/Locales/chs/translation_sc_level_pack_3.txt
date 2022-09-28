@@ -1,4 +1,4 @@
-18
+20
 ScLevelPack.Level35=牺牲
 ScLevelPack.Level35.WM=牺牲 [C]
 ScLevelPack.Level36=尤克里里
@@ -17,3 +17,5 @@ ScLevelPack.Level42=迟疑Ⅳ
 ScLevelPack.Level42.WM=迟疑Ⅳ [TF]
 ScLevelPack.Level43=风之舞
 ScLevelPack.Level43.WM=风之舞 [F]
+ScLevelPack.Level44=交通信号灯
+ScLevelPack.Level44.WM=交通信号灯 [R]

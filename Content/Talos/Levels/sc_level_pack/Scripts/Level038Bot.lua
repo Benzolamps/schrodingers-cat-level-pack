@@ -1,3 +1,11 @@
+local util = worldGlobals.CreateUtil()
+
+for _, marker in ipairs(markers) do
+  local p = marker:GetPlacement()
+  p.vx = -60
+  marker:SetPlacement(p)
+end
+
 RunHandled(
   function ()
     Wait(Any(Event(mine1.Died), Event(mine2.Died)))
@@ -14,14 +22,10 @@ RunHandled(
     else
       switch2:Deactivate()
     end
-    if switch1:IsActivated() and switch2:IsActivated() then
-      marker1:SetPlacement(mthQuatVect(mthEulerToQuaternion(mthVector3f(0, 0, 0)), mthVector3f(-60, 0, -1)))
-      marker2:SetPlacement(mthQuatVect(mthEulerToQuaternion(mthVector3f(0, 0, 0)), mthVector3f(-60, 0, 1)))
-    end
   end,
   On(Event(switch.Activated)),
   function()
-    mine1:SetPlacement(marker3:GetPlacement())
-    mine2:SetPlacement(marker4:GetPlacement())
+    Wait(Delay(1))
+    cubes:Delete()
   end
 )

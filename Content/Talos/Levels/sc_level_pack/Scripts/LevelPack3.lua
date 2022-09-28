@@ -7,3 +7,4 @@ worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level40=Shuffle(12345
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level41=Reflective Moments"), "R", "Content/Talos/Levels/sc_level_pack/level41.wld", 41)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level42=Hesitation Ⅳ"), "TF", "Content/Talos/Levels/sc_level_pack/level42.wld", 42)
 worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level43=Dance of Wind"), "F", "Content/Talos/Levels/sc_level_pack/level43.wld", 43)
+worldGlobals.CreateLevel(TranslateString("TTRS:ScLevelPack.Level44=Traffic Light"), "R", "Content/Talos/Levels/sc_level_pack/level44.wld", 44)
