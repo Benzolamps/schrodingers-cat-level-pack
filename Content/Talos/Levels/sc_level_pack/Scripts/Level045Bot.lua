@@ -11,7 +11,7 @@ RunHandled(
     local pc = cube:GetPlacement()
     local pfi = fanItem:GetPlacement()
     local pr = connector:GetPlacement()
-    local p = 0.01 > 0
+    local p = 0.1 > 0
       + mthAbsF(pc.vx - pf.vx)
       + mthAbsF(pc.vz - pf.vz)
       + mthAbsF(pfi.vx - pf.vx)
