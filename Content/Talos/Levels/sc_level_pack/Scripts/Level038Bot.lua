@@ -1,5 +1,3 @@
-local util = worldGlobals.CreateUtil()
-
 for _, marker in ipairs(markers) do
   local p = marker:GetPlacement()
   p.vx = -60

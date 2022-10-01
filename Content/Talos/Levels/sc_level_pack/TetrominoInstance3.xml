@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="10">
+		<TetrominoInstances counthint="16">
 			<TetrominoInstanceData>
 				<Name>NO35</Name>
 				<NeededMechanics>C</NeededMechanics>
@@ -102,6 +102,17 @@
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO45</Name>
+				<NeededMechanics>FCRA</NeededMechanics>
+				<Level>level45</Level>
+				<Puzzle>045</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level45=Adapter"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
 		</TetrominoInstances>
 	</TetrominoInstances>
 </SeriousEngineFile>
+

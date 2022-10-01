@@ -18,3 +18,5 @@ terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level43.WM=Dance of Wind [
 terminal when (Level43) { notext set: Level;=43; goto: LevelSelected}
 terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level44.WM=Traffic Light [R]" next: Level44 }
 terminal when (Level44) { notext set: Level;=44; goto: LevelSelected}
+terminal when (ListThreads) { text: "TTRS:ScLevelPack.Level45.WM=Adapter [FCR]" next: Level45 }
+terminal when (Level45) { notext set: Level;=45; goto: LevelSelected}
