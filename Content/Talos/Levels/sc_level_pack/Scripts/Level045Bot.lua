@@ -1,6 +1,7 @@
 local util = worldGlobals.CreateUtil()
+
 RunHandled(
-  WaitForever,
+  util.WaitTerminal,
   OnEvery(Delay(0.1)),
   function()
     local current
