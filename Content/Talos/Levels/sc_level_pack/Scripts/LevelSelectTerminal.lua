@@ -6,7 +6,7 @@ local util = worldGlobals.CreateUtil()
 local talosProgress = nexGetTalosProgress(worldInfo)
 
 if terminal == util.terminal then
-  -- create a temporary ChapterInfo object to prevent the level from not being saved
+  -- create a temporary ChapterInfo object to prevent the level not being saved
   local curr = worldInfo:GetCurrentChapter()
   local temp = SpawnEntityByClass(worldInfo, curr:GetPlacement(), "CChapterInfoEntity")
   temp:Start()
@@ -86,13 +86,14 @@ RunHandled(
   On(Event(terminal.Stopped)),
   function ()
     if terminal == util.terminal then
-      -- lower the fences
-      if fences ~= nil then
-        fences:Open()
+      -- open the doors
+      local doors = worldInfo:GetAllEntitiesOfClass("CDoorEntity")
+      for _, door in ipairs(doors) do
+        door:Open()
       end
-      -- disable the barriers
-      if barriers ~= nil then
-        barriers:Disable()
+      -- delete the entities
+      if entities ~= nil then
+        entities:Delete()
       end
       -- trigger the switch
       if switch ~= nil then
