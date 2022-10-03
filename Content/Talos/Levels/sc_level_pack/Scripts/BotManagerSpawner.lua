@@ -15,7 +15,7 @@ for _, marker in ipairs(markers) do
     RunHandled(
       function ()
         Wait(Event(player.Died))
-        if carriedItem ~= nil then
+        if carriedItem ~= nil and not IsDeleted(carriedItem) then
           carriedItem:SetPlacement(player:GetPlacement())
         end
         Wait(Delay(3))
