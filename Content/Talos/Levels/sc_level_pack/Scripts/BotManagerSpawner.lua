@@ -1,3 +1,5 @@
+local util = worldGlobals.CreateUtil()
+
 -- botManager : CPlayerBotManagerEntity
 local botManager = worldInfo:GetEntityByName("BotManager")
 local markers = worldInfo:GetAllEntitiesOfClass("CNPCSpawnMarkerEntity")
@@ -21,7 +23,9 @@ for _, marker in ipairs(markers) do
         Wait(Delay(3))
         player:StartFadingOut(1)
         Wait(Delay(1.5))
-        player:Delete()
+        if not util.IsTimeSwitchPlaying() then
+          player:Delete()
+        end
       end,
       OnEvery(Event(player.ObjectGrabbed)),
       function ()

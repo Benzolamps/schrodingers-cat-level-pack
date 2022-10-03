@@ -1,5 +1,6 @@
 local util = worldGlobals.CreateUtil()
 
+Wait(Delay(0.1))
 local bots = worldInfo:GetAllEntitiesOfClass('CPlayerBotPuppetEntity')
 local botGroup = NewGroupVar()
 for _, bot in pairs(bots) do
