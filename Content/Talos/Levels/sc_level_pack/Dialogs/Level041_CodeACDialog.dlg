@@ -53,15 +53,7 @@ terminal when (Code_AC_List and Code_AC_Message_Read) {
 }
 
 terminal when (Code_AC_ShowMessage) {
-  text: [[TTRS:notrans=
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%w9
-▓▓ A. %t'Code_AC_DoorAHint' ▓▓%w9
-▓▓ B. %t'Code_AC_DoorBHint' ▓▓%w9
-▓▓ C. %t'Code_AC_DoorCHint' ▓▓%w9
-▓▓ D. %t'Code_AC_DoorDHint' ▓▓%w9
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%w9
-
-]]
+  prompt: "TTRS:notrans=%e8"
   set: Code_AC_Message_Read
   goto: Code_AC_List
 }

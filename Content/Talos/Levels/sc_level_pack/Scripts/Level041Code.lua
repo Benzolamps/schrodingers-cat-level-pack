@@ -111,6 +111,23 @@ end)()
 -- terminal
 ;
 (function()
+  -- generate hint
+  local util = worldGlobals.CreateUtil()
+
+  local doorAHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorAHint=From fast to slow   ")
+  local doorBHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorBHint=From high to low    ")
+  local doorCHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorCHint=From big to small   ")
+  local doorDHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorDHint=From present to past")
+  local str = TranslateString('ScLevelPack.codeAC.From=\nFrom: anonymous\n')
+    .. util.FormatString(TranslateString('ScLevelPack.codeAC.To=To: %1\n\n'), util.player:GetPlayerName())
+    .. TranslateString('ScLevelPack.codeAC.TopSecret=Top secret, burn after reading.\n\n')
+    .. '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n'
+    .. '▓▓ A. ' .. doorAHint .. ' ▓▓\n'
+    .. '▓▓ B. ' .. doorBHint .. ' ▓▓\n'
+    .. '▓▓ C. ' .. doorCHint .. ' ▓▓\n'
+    .. '▓▓ D. ' .. doorDHint .. ' ▓▓\n'
+    .. '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n\n'
+
   -- talosProgress : CTalosProgress
   local talosProgress = nexGetTalosProgress(worldInfo)
   talosProgress:ClearVar("Code_AC_Message_Read")
@@ -132,6 +149,11 @@ end)()
       local index = talosProgress:GetCodeValue("Code_AC_Current")
       doors[index]:Open()
       talosProgress:SetVar("Code_AC_Door" .. string.char(string.byte('@') + index) .. "_Unlocked")
+    end,
+    -- show hint
+    OnEvery(CustomEvent(terminal, "TerminalEvent_8")),
+    function()
+      terminal:AddString(str .. util.strings.CommonPrompt)
     end
   )
 end)()

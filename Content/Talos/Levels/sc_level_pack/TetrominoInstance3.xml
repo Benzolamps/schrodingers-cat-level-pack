@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SeriousEngineFile Loader="CXMLResourceFileType">
 	<TetrominoInstances>
-		<TetrominoInstances counthint="16">
+		<TetrominoInstances counthint="12">
 			<TetrominoInstanceData>
 				<Name>NO35</Name>
 				<NeededMechanics>C</NeededMechanics>
@@ -14,100 +14,110 @@
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO36</Name>
-				<NeededMechanics>TCS</NeededMechanics>
+				<NeededMechanics>F</NeededMechanics>
 				<Level>level36</Level>
 				<Puzzle>036</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level36=Ukulele"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level36=Blowing in the Wind"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO37</Name>
-				<NeededMechanics>CS</NeededMechanics>
+				<NeededMechanics>FC</NeededMechanics>
 				<Level>level37</Level>
 				<Puzzle>037</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level37=Mutual Support"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level37=Thief"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO38</Name>
-				<NeededMechanics>FC</NeededMechanics>
+				<NeededMechanics>R</NeededMechanics>
 				<Level>level38</Level>
 				<Puzzle>038</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level38=Thief"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level38=Reflective Moments"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO39</Name>
-				<NeededMechanics>T</NeededMechanics>
+				<NeededMechanics>R</NeededMechanics>
 				<Level>level39</Level>
 				<Puzzle>039</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level39=Oxozone"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level39=Traffic Light"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO40</Name>
-				<NeededMechanics>FR</NeededMechanics>
+				<NeededMechanics>FCR</NeededMechanics>
 				<Level>level40</Level>
 				<Puzzle>040</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level40=Shuffle(123456)"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level40=Adapter"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO41</Name>
-				<NeededMechanics>R</NeededMechanics>
+				<NeededMechanics>FR</NeededMechanics>
 				<Level>level41</Level>
 				<Puzzle>041</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level41=Reflective Moments"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level41=Shuffle(123456)"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO42</Name>
-				<NeededMechanics>TF</NeededMechanics>
+				<NeededMechanics>T</NeededMechanics>
 				<Level>level42</Level>
 				<Puzzle>042</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level42=Hesitation Ⅳ"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level42=Ukulele"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO43</Name>
-				<NeededMechanics>F</NeededMechanics>
+				<NeededMechanics>TF</NeededMechanics>
 				<Level>level43</Level>
 				<Puzzle>043</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level43=Dance of Wind"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level43=Hesitation Ⅳ"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO44</Name>
-				<NeededMechanics>R</NeededMechanics>
+				<NeededMechanics>CS</NeededMechanics>
 				<Level>level44</Level>
 				<Puzzle>044</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level44=Traffic Light"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level44=Mutual Support"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
 			</TetrominoInstanceData>
 			<TetrominoInstanceData>
 				<Name>NO45</Name>
-				<NeededMechanics>FCRA</NeededMechanics>
+				<NeededMechanics>TCS</NeededMechanics>
 				<Level>level45</Level>
 				<Puzzle>045</Puzzle>
-				<PuzzleTitle>"TTRS:ScLevelPack.Level45=Adapter"</PuzzleTitle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level45=Lift me up to Touch the Sky"</PuzzleTitle>
+				<PuzzleHint></PuzzleHint>
+				<TetrominoPos>0.0000 0.0000</TetrominoPos>
+				<MedianDuration>-2</MedianDuration>
+			</TetrominoInstanceData>
+			<TetrominoInstanceData>
+				<Name>NO46</Name>
+				<NeededMechanics>TS</NeededMechanics>
+				<Level>level46</Level>
+				<Puzzle>046</Puzzle>
+				<PuzzleTitle>"TTRS:ScLevelPack.Level46=Farewell"</PuzzleTitle>
 				<PuzzleHint></PuzzleHint>
 				<TetrominoPos>0.0000 0.0000</TetrominoPos>
 				<MedianDuration>-2</MedianDuration>
@@ -115,4 +125,3 @@
 		</TetrominoInstances>
 	</TetrominoInstances>
 </SeriousEngineFile>
-
