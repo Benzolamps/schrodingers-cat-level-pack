@@ -1,4 +1,4 @@
-Wait(Delay(0.1))
+Wait(Delay(1))
 local bot = worldInfo:GetAllEntitiesOfClass('CPlayerBotPuppetEntity')[1]
 BreakableRunHandled(
   WaitForever,
