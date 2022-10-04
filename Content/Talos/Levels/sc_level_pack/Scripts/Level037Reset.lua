@@ -1,18 +1,16 @@
 local util = worldGlobals.CreateUtil()
 
+local count = 0
 RunHandled(
   util.WaitTerminal,
+  OnEvery(Any(Events(mines.Died))),
+  function ()
+    count = count + 1
+  end,
   OnEvery(Delay(0.1)),
   function ()
-    if not detector1:IsPointInArea(cube1:GetPlacement():GetVect(), 0.5) then
-      return
+    if count == 1 then
+      util.ResetMessage()
     end
-    if not detector2:IsPointInArea(cube2:GetPlacement():GetVect(), 0.5) then
-      return
-    end
-    if cube2:GetPlacement().vy > 0.5 then
-      return
-    end
-    util.ResetMessage()
   end
 )

@@ -1,13 +1,21 @@
+local util = worldGlobals.CreateUtil()
+
 RunHandled(
-  function ()
-    Wait(Event(mine.Jammed))
-  end,
-  OnEvery(Delay(0.1)),
+  WaitForever,
+  OnEvery(Event(pressure1.Pressed)),
   function()
-    if detector:IsPointInArea(mine:GetPlacement():GetVect(), 0.5)  then
+    if not util.ExistEntityInArea("CCarriableFanItemEntity", detector) then
       switch:Activate()
-    else
-      switch:Deactivate()
     end
+  end,
+  OnEvery(Event(pressure2.Pressed)),
+  function()
+    if pressure1:IsPressed() then
+      switch:Activate()
+    end
+  end,
+  OnEvery(Any(Event(pressure1.Released), Event(pressure2.Released))),
+  function()
+    switch:Deactivate()
   end
 )
