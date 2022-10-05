@@ -13,7 +13,7 @@ for i = 1, 5 do
 end
 
 local function ShowHint(index)
-  if hints[index] then
+  if hints[index] or talosProgress:IsVarSet("Sc_Mechanic_Hinted_" .. index) then
     return
   end
   hints[index] = true
