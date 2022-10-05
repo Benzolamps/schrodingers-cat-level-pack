@@ -1,0 +1,34 @@
+terminal when (Sc_Mechanic_Hint_1) {
+  text: [[TTRS:ScLevelPack.MechanicHint1=
+This kind of enhanced platform can be snapped to hexahedrons, pressure plates, and platforms in playback state. Please never mind its indicator is a fan!%w9
+%w9
+%w9]]
+}
+
+terminal when (Sc_Mechanic_Hint_2) {
+  text: [[TTRS:ScLevelPack.MechanicHint2=
+To avoid a time recorder bugs, the bot will start or stop the time recorder only if you don't have an item in your hand. Otherwise, he'll be waiting for you to drop the item. %w9
+%w9
+%w9]]
+}
+
+terminal when (Sc_Mechanic_Hint_3) {
+  text: [[TTRS:ScLevelPack.MechanicHint3=
+You can jump on the platform of the Bot in playback state, but you need to get down in time before the playback time is over, to avoid triggering a bug that gets stuck in the air. (mechanic bug, official level also has)%w9
+%w9
+%w9]]
+}
+
+terminal when (Sc_Mechanic_Hint_4) {
+  text: [[TTRS:ScLevelPack.MechanicHint4=
+You cannot jump directly on the platform of the Bot in normal or recording state, but you can put a hexahedron on it and jump on it, but it's not very stable. If the game frame rate is low, or if you use Fast Forward, it is easy to trigger some ghost animal bug to make you fall. (Tried to fix it, failed)%w9
+%w9
+%w9]]
+}
+
+terminal when (Sc_Mechanic_Hint_5) {
+  text: [[TTRS:ScLevelPack.MechanicHint5=
+If you want the Bot to jump on your platform in playback state, in recording state, don't move fast around him after you've planted yourself. Otherwise, he will jump incorrectly or even jump into the water. (Tried to fix it, failed) And don't stop playing before he get down, to avoid triggering a bug that gets stuck in the air.%w9
+%w9
+%w9]]
+}

@@ -1,17 +1,11 @@
 local util = worldGlobals.CreateUtil()
 
--- botManager : CPlayerBotManagerEntity
-local botManager = worldInfo:GetEntityByName("BotManager")
 local markers = worldInfo:GetAllEntitiesOfClass("CNPCSpawnMarkerEntity")
 for _, marker in ipairs(markers) do
   -- player : CPlayerBotPuppetEntity
-  local player
-  if string.find(marker:GetName(), "WhiteGhost") == 1 then
-    player = botManager:SpawnGhostNPC("White Ghost", marker)
-  elseif string.find(marker:GetName(), "BlackGhost") == 1 then
-    player = botManager:SpawnGhostNPC("Black Ghost", marker)
-  end
-  player:SetCharacterName('Test Bot ' .. string.sub(marker:GetName(), 11))
+  local name = string.sub(marker:GetName(), 1, 4)
+  local player = botManager:SpawnGhostNPC(name, marker)
+  player:SetCharacterName("Test Bot " .. string.sub(marker:GetName(), 6))
   RunAsync(function ()
     local carriedItem
     RunHandled(

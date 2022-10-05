@@ -1,7 +1,7 @@
 local util = worldGlobals.CreateUtil()
 
 Wait(Delay(1))
-local bot = worldInfo:GetAllEntitiesOfClass('CPlayerBotPuppetEntity')[1]
+local bot = worldInfo:GetAllEntitiesOfClass("CPlayerBotPuppetEntity")[1]
 local po = marker:GetPlacement()
 RunHandled(
   WaitForever,

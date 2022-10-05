@@ -1,6 +1,8 @@
 local cube1Deployed = false
 local cube2Deployed = false
 
+Wait(Event(detector1.Activated))
+
 RunHandled(
   WaitForever,
   OnEvery(Event(mine.Jammed)),

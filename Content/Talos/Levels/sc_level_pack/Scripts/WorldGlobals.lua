@@ -109,8 +109,8 @@ worldGlobals.CreateUtil = function ()
   --- @param str string string formatting
   util.FormatString = function (str, ...)
     for i, v in ipairs({...}) do
-      if string.find(str, '%%' .. i) then
-        str = string.gsub(str, '%%' .. i, tostring(v))
+      if string.find(str, "%%" .. i) then
+        str = string.gsub(str, "%%" .. i, tostring(v))
       end
     end
     return str

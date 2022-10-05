@@ -13,7 +13,7 @@ end
 --- @param stage number stage
 local function SetStage(stage)
   if corIsAppEditor() then
-    print('stage: ' .. stage)
+    print("stage: " .. stage)
   end
   talosProgress:SetCode("Code_TS_Stage", stage)
 end
@@ -28,7 +28,7 @@ end
 --- @param code number code
 local function SetCode(code)
   if corIsAppEditor() then
-    print('code: ' .. code)
+    print("code: " .. code)
   end
   talosProgress:SetCode("Code_TS_Code", code)
   talosProgress:SetCode("Code_TS_CodePart_1", code / 1000 % 10)
@@ -47,7 +47,7 @@ end
 --- @param part number stage
 local function SetCodePart(part)
   if corIsAppEditor() then
-    print('part: ' .. part)
+    print("part: " .. part)
   end
   talosProgress:SetCode("Code_TS_Part", part)
 end
@@ -62,7 +62,7 @@ end
 --- @param parts number stage
 local function SetCodeParts(parts)
   if corIsAppEditor() then
-    print('parts: ' .. parts)
+    print("parts: " .. parts)
   end
   talosProgress:SetCode("Code_TS_Parts", parts)
 end
@@ -77,7 +77,7 @@ end
 --- @param codeRead number code read
 local function SetCodeRead(codeRead)
   if corIsAppEditor() then
-    print('codeRead: ' .. codeRead)
+    print("codeRead: " .. codeRead)
   end
   if codeRead ~= 1 then
     if codeRead == 0 then
@@ -100,7 +100,7 @@ end
 --- @param recording boolean recording
 local function SetRecording(recording)
   if corIsAppEditor() then
-    print('recording: ' .. tostring(recording))
+    print("recording: " .. tostring(recording))
   end
   if recording then
     talosProgress:SetVar("Code_TS_Recording")

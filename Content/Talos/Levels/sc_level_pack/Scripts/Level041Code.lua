@@ -30,7 +30,7 @@ end)()
 -- puzzle b
 ;
 (function()
-  local fans = worldInfo:GetAllEntitiesOfClass('CFanEntity')
+  local fans = worldInfo:GetAllEntitiesOfClass("CFanEntity")
   for i = 1, #fans do
     local shouldDelete = true
     for j = 1, 6 do
@@ -61,7 +61,7 @@ end)()
   end
   listNumbers = { listNumbers[1], listNumbers[2], listNumbers[3], listNumbers[4], listNumbers[5], listNumbers[6] }
   table.sort(listNumbers)
-  local numberModels = worldInfo:GetAllEntitiesOfClass('CStaticModelEntity')
+  local numberModels = worldInfo:GetAllEntitiesOfClass("CStaticModelEntity")
   for i = 1, #numberModels do
     local shouldDelete = true
     for j = 1, 6 do
@@ -118,21 +118,21 @@ end)()
   local doorBHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorBHint=From high to low    ")
   local doorCHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorCHint=From big to small   ")
   local doorDHint = TranslateString("TTRS:ScLevelPack.CodeAC.DoorDHint=From present to past")
-  local str = TranslateString('ScLevelPack.codeAC.From=\nFrom: anonymous\n')
-    .. util.FormatString(TranslateString('ScLevelPack.codeAC.To=To: %1\n\n'), util.player:GetPlayerName())
-    .. TranslateString('ScLevelPack.codeAC.TopSecret=Top secret, burn after reading.\n\n')
-    .. '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n'
-    .. '▓▓ A. ' .. doorAHint .. ' ▓▓\n'
-    .. '▓▓ B. ' .. doorBHint .. ' ▓▓\n'
-    .. '▓▓ C. ' .. doorCHint .. ' ▓▓\n'
-    .. '▓▓ D. ' .. doorDHint .. ' ▓▓\n'
-    .. '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n\n'
+  local str = TranslateString("ScLevelPack.codeAC.From=\nFrom: anonymous\n")
+    .. util.FormatString(TranslateString("ScLevelPack.codeAC.To=To: %1\n\n"), util.player:GetPlayerName())
+    .. TranslateString("ScLevelPack.codeAC.TopSecret=Top secret, burn after reading.\n\n")
+    .. "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n"
+    .. "▓▓ A. " .. doorAHint .. " ▓▓\n"
+    .. "▓▓ B. " .. doorBHint .. " ▓▓\n"
+    .. "▓▓ C. " .. doorCHint .. " ▓▓\n"
+    .. "▓▓ D. " .. doorDHint .. " ▓▓\n"
+    .. "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n\n"
 
   -- talosProgress : CTalosProgress
   local talosProgress = nexGetTalosProgress(worldInfo)
   talosProgress:ClearVar("Code_AC_Message_Read")
   for i = 1, 4 do
-    talosProgress:ClearVar("Code_AC_Door" .. string.char(string.byte('@') + i) .. "_Unlocked")
+    talosProgress:ClearVar("Code_AC_Door" .. string.char(string.byte("@") + i) .. "_Unlocked")
   end
 
   RunHandled(
@@ -148,7 +148,7 @@ end)()
     function()
       local index = talosProgress:GetCodeValue("Code_AC_Current")
       doors[index]:Open()
-      talosProgress:SetVar("Code_AC_Door" .. string.char(string.byte('@') + index) .. "_Unlocked")
+      talosProgress:SetVar("Code_AC_Door" .. string.char(string.byte("@") + index) .. "_Unlocked")
     end,
     -- show hint
     OnEvery(CustomEvent(terminal, "TerminalEvent_8")),
