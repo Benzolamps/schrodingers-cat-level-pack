@@ -65,7 +65,7 @@ RunHandled(
   WaitForever,
   OnEvery(CustomEvent("TimeSwitchRecordingStarted")),
   function()
-    if GetClosestEntity(util.player, "CTimeSwitchEntity", 4) == nil then
+    if GetClosestEntity(util.player, "CTimeSwitchEntity", 10) == nil then
       ShowHint(2)
     end
   end
